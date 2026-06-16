@@ -1,0 +1,251 @@
+URL,Wilayah,Kecamatan,Luas Tanah (m2),Luas Bangunan (m2),Jumlah Kamar,Jumlah Kamar Mandi,Tingkat/Lantai,Harga Jual,Terjual/Belum,Arah Hadap Rumah,Posisi Rumah,Lebar Jalan Depan Rumah (ROW),Carport,"Siap Huni 
+(Y/N)","Furnish 
+(Y/N)",Watt Listrik,Dekat Pasar,Dekat Sekolah,Dekat Puskesmas/RS,Dekat Mall,Dekat Tempat Ibadah,Dekat Makam,Dekat Club House,Dekat Jalan Raya Utama,Worth-it
+,Timur,Mulyorejo,158,178,4,2,2,"Rp5,000,000,000",Belum,Utara,Tengah,6,0,Y,N,2200,N,N,N,Y,N,Y,N,N,Not Worth-It
+,Pusat,Tambaksari,200,200,4,3,2,"Rp2,750,000,000",Belum,Barat,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Not Worth-It
+,Timur,Sukolilo,280,350,4,3,1,"Rp4,500,000,000",Belum,Utara,Tengah,6,0,Y,N,2200,N,N,N,Y,N,N,N,N,Not Worth-It
+,Barat,Lakarsantri,210,310,5,4,2,"Rp6,200,000,000",Belum,Selatan,Tengah,3,2,Y,N,2200,N,N,Y,Y,N,N,N,N,Not Worth-It
+,Pusat,Gubeng,150,200,4,4,2,"Rp2,500,000,000",Belum,Selatan,Tengah,6,0,Y,N,2200,N,N,Y,Y,N,N,N,N,Worth-It
+,Pusat,Gubeng,395,300,4,2,2,"Rp2,700,000,000",Belum,Selatan,Tengah,6,0,N,N,2200,N,Y,N,N,N,N,N,N,Worth-It
+,Timur,Rungkut,168,150,3,2,1,"Rp2,500,000,000",Belum,Timur,Tengah,6,0,N,Y,2200,N,N,Y,Y,N,N,N,N,Not Worth-It
+,Selatan,Gayungan,120,85,2,1,2,"Rp2,980,000,000",Belum,Utara,Tengah,6,0,N,Y,2200,Y,Y,Y,Y,N,N,N,N,Not Worth-It
+,Barat,Lakarsantri,288,180,3,2,1,"Rp5,200,000,000",Belum,Timur,Tengah,3,0,N,Y,2200,N,N,Y,Y,N,N,N,Y,Not Worth-It
+,Barat,Pakal,100,120,4,3,2,"Rp2,100,000,000",Belum,Selatan,Tengah,3,0,N,Y,4400,N,Y,Y,Y,N,N,N,N,Worth-It
+,Timur,Mulyorejo,189,300,4,3,2,"Rp4,850,000,000",Belum,Selatan,Tengah,3,2,N,Y,5500,N,N,N,Y,N,Y,N,N,Not Worth-It
+,Timur,Rungkut,203,300,3,3,2,"Rp2,250,000,000",Belum,Selatan,Tengah,6,3,N,N,4400,N,Y,N,N,N,N,N,N,Worth-It
+,Timur,Mulyorejo,150,230,4,4,1,"Rp4,050,000,000",Belum,Selatan,Tengah,3,2,N,N,2200,N,N,N,Y,N,N,N,N,Not Worth-It
+,Pusat,Gubeng,135,105,2,1,1,"Rp2,500,000,000",Belum,Utara,Tengah,6,1,N,Y,2200,N,Y,N,Y,N,N,N,N,Worth-It
+,Barat,Lakarsantri,200,310,3,3,2,"Rp3,900,000,000",Belum,Selatan,Tengah,6,1,N,Y,4400,N,N,Y,N,N,N,N,N,Not Worth-It
+,Pusat,Gubeng,152,120,4,2,1,"Rp1,330,000,000",Belum,Selatan,Tengah,2,1,N,Y,2200,N,N,N,N,N,N,N,N,Worth-It
+,Pusat,Gubeng,300,220,4,3,2,"Rp3,060,000,000",Belum,Selatan,Tengah,2,1,Y,Y,2200,N,N,N,N,N,N,N,N,Worth-It
+,Pusat,Gubeng,160,200,4,3,2,"Rp2,250,000,000",Belum,Utara,Tengah,2,1,Y,Y,2200,N,N,N,Y,N,N,N,N,Not Worth-It
+,Selatan,Jambangan,90,145,3,2,2,"Rp1,900,000,000",Belum,Utara,Tengah,2,1,N,Y,3500,N,Y,N,Y,N,N,N,N,Worth-It
+,Pusat,Simokerto,128,170,3,3,5,"Rp1,200,000,000",Belum,Utara,Tengah,2,0,N,N,2200,Y,N,Y,N,N,N,N,N,Worth-It
+,Selatan,Jambangan,120,170,4,4,2,"Rp2,150,000,000",Belum,Timur,Tengah,6,0,Y,N,2200,N,Y,N,N,N,N,N,N,Not Worth-It
+,Barat,Lakarsantri,235,234,4,3,2,"Rp4,800,000,000",Belum,Selatan,Tengah,6,0,N,N,2200,N,N,Y,N,N,N,N,N,Not Worth-It
+,Selatan,Jambangan,120,134,3,3,1,"Rp1,850,000,000",Belum,Selatan,Tengah,6,1,N,N,2200,Y,Y,N,Y,N,N,N,N,Not Worth-It
+,Barat,Sambikerep,302,450,5,5,2,"Rp5,500,000,000",Belum,Barat,Tengah,3,4,Y,Y,5500,N,Y,N,Y,N,N,N,N,Worth-It
+,Pusat,Gubeng,160,200,2,1,1,"Rp700,000,000",Belum,Utara,Tengah,6,1,N,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Pusat,Gubeng,128,180,4,3,2,"Rp2,500,000,000",Belum,Utara,Tengah,3,2,Y,Y,2200,N,Y,Y,Y,N,N,N,N,Not Worth-It
+,Timur,Mulyorejo,449,400,4,4,2,"Rp5,800,000,000",Belum,Timur,Tengah,6,2,N,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Utara,Semampir,100,150,4,3,2,"Rp1,350,000,000",Belum,Selatan,Tengah,6,1,N,Y,2200,N,N,N,N,N,N,N,N,Not Worth-It
+,Timur,Rungkut,65,30,2,1,2,"Rp595,000,000",Belum,Selatan,Tengah,6,1,Y,Y,2200,N,Y,Y,N,N,N,N,N,Worth-It
+,Timur,Rungkut,120,225,4,5,2,"Rp2,600,000,000",Belum,Utara,Tengah,6,1,N,Y,4400,N,Y,Y,N,N,N,N,N,Worth-It
+,Timur,Tenggilis Mejoyo,189,180,2,1,1,"Rp1,800,000,000",Belum,Utara,Tengah,6,0,N,Y,2200,N,Y,Y,N,N,N,N,N,Worth-It
+,Utara,Semampir,90,180,4,3,2,"Rp1,450,000,000",Belum,Barat,Tengah,6,0,Y,Y,5000,N,N,Y,N,N,N,N,N,Not Worth-It
+,Timur,Mulyorejo,120,160,5,4,2,"Rp2,850,000,000",Belum,Selatan,Hook,10,2,N,Y,2200,N,N,Y,N,N,N,N,N,Worth-It
+,Barat,Lakarsantri,200,250,4,4,2,"Rp2,940,000,000",Belum,Selatan,Tengah,6,1,N,Y,4400,N,Y,Y,N,N,N,N,N,Worth-It
+,Barat,Sambikerep,162,149,3,2,2,"Rp2,500,000,000",Belum,Utara,Tengah,8,2,N,Y,2200,N,Y,Y,N,N,N,N,N,Not Worth-It
+,Selatan,Gayungan,56,85,3,3,2,"Rp1,470,000,000",Belum,Selatan,Hook,6,0,N,N,2200,N,N,Y,N,N,N,N,N,Worth-It
+,Timur,Mulyorejo,156,250,4,4,1,"Rp2,000,000,000",Belum,Selatan,Tengah,6,1,Y,Y,2200,N,Y,Y,Y,N,N,N,N,Worth-It
+,Barat,Karang Pilang,205,180,3,2,1,"Rp1,200,000,000",Belum,Selatan,Tengah,6,3,Y,Y,2200,N,N,Y,N,N,N,N,N,Worth-It
+,Timur,Mulyorejo,135,170,5,4,2,"Rp2,800,000,000",Belum,Utara,Tengah,6,2,N,Y,2200,N,Y,Y,N,N,N,N,N,Not Worth-It
+,Timur,Rungkut,105,180,4,4,2,"Rp1,950,000,000",Belum,Selatan,Tengah,6,2,Y,Y,2200,N,Y,Y,N,N,N,N,N,Not Worth-It
+,Timur,Mulyorejo,200,300,5,5,2,"Rp5,000,000,000",Belum,Selatan,Tengah,6,2,Y,Y,3300,N,Y,Y,Y,N,N,N,N,Worth-It
+,Utara,Kenjeran,135,210,5,4,2,"Rp3,200,000,000",Belum,Selatan,Tengah,6,0,N,Y,3500,N,Y,Y,N,N,N,N,N,Not Worth-It
+,Utara,Kenjeran,120,150,5,4,2,"Rp2,600,000,000",Belum,Selatan,Tengah,6,2,N,Y,2200,N,Y,Y,Y,N,N,N,N,Not Worth-It
+,Timur,Sukolilo,136,195,5,4,2,"Rp3,350,000,000",Belum,Utara,Tengah,10,2,N,Y,2200,N,N,Y,N,N,N,N,N,Not Worth-It
+,Timur,Tenggilis Mejoyo,78,120,4,4,2,"Rp1,890,000,000",Belum,Selatan,Hook,6,1,Y,Y,2200,N,N,N,N,N,N,N,N,Not Worth-It
+,Timur,Mulyorejo,120,100,4,1,1,"Rp1,650,000,000",Belum,Selatan,Hook,6,1,Y,N,3500,N,Y,N,Y,N,N,N,N,Worth-It
+,Utara,Semampir,300,200,3,2,1,"Rp1,600,000,000",Belum,Selatan,Hook,6,0,Y,N,2200,N,Y,Y,N,N,N,N,N,Worth-It
+,Timur,Sukolilo,90,180,4,3,2,"Rp1,450,000,000",Belum,Utara,Hook,6,1,Y,N,4400,N,Y,N,N,N,N,N,N,Worth-It
+,Selatan,Jambangan,120,90,3,1,1,"Rp1,650,000,000",Belum,Barat,Hook,6,2,Y,N,2200,N,N,Y,N,N,N,N,N,Worth-It
+,Selatan,Gayungan,136,150,2,2,1,"Rp2,790,000,000",Belum,Selatan,Hook,6,2,Y,N,2200,N,Y,N,N,Y,N,N,N,Not Worth-It
+,Timur,Gunung Anyar,50,35,2,1,1,"Rp525,000,000",Belum,Timur,Hook,6,0,Y,N,1300,N,Y,N,N,N,N,N,N,Worth-It
+,Timur,Rungkut,48,45,2,1,2,"Rp565,000,000",Belum,Selatan,Hook,6,1,Y,N,1300,N,Y,N,N,N,N,N,N,Worth-It
+,Selatan,Wonokromo,60,100,3,2,1,"Rp599,000,000",Belum,Utara,Hook,6,0,Y,N,1300,N,Y,N,N,N,N,N,N,Worth-It
+,Timur,Gunung Anyar,50,70,3,2,1,"Rp625,000,000",Belum,Utara,Hook,6,0,Y,N,1300,N,Y,N,N,N,N,N,N,Worth-It
+,Timur,Rungkut,65,65,2,1,1,"Rp625,000,000",Belum,Selatan,Hook,6,0,Y,N,1300,N,Y,Y,N,N,N,N,N,Worth-It
+,Timur,Rungkut,100,60,2,1,1,"Rp650,000,000",Belum,Selatan,Hook,6,0,Y,N,1300,N,Y,N,N,N,N,N,N,Worth-It
+,Timur,Gunung Anyar,70,50,2,1,1,"Rp750,000,000",Belum,Utara,Hook,6,0,Y,N,1300,N,Y,N,N,N,N,N,N,Worth-It
+,Selatan,Tambakcemandi,72,85,3,1,2,"Rp750,000,000",Belum,Barat,Hook,6,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Selatan,Kepuhkiriman,78,120,3,1,2,"Rp795,000,000",Belum,Selatan,Hook,6,0,Y,N,1300,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Rungkut,100,70,3,1,1,"Rp875,000,000",Belum,Selatan,Hook,6,2,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Sukolilo,45,70,2,2,2,"Rp925,000,000",Belum,Barat,Hook,6,1,Y,N,2200,N,Y,N,N,N,N,N,N,Not Worth-It
+,Timur,Mulyorejo,128,150,4,3,2,"Rp4,500,000,000",Belum,Selatan,Tengah,6,0,Y,Y,2200,N,N,N,N,N,N,N,N,Not Worth-It
+,Timur,Tenggilis Mejoyo,232,250,4,4,2,"Rp2,680,000,000",Belum,Selatan,Hook,6,0,Y,N,3500,N,N,N,N,N,N,N,N,Worth-It
+,Selatan,Gayungan,360,430,6,6,2,"Rp3,800,000,000",Belum,Utara,Tengah,8,0,Y,N,2200,N,Y,N,N,Y,N,N,N,Worth-It
+,Timur,Sukolilo,78,118,3,2,2,"Rp1,850,000,000",Belum,Selatan,Tengah,10,2,Y,N,3500,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Sukolilo,75,42,2,1,1,"Rp1,050,000,000",Belum,Selatan,Tengah,10,0,Y,N,2200,N,Y,N,Y,N,N,N,N,Worth-It
+,Timur,Mulyorejo,126,210,4,3,2,"Rp3,100,000,000",Belum,Selatan,Tengah,6,0,Y,N,3500,N,Y,N,Y,N,N,N,N,Not Worth-It
+,Timur,Mulyorejo,75,110,3,3,2,"Rp1,700,000,000",Belum,Selatan,Tengah,10,0,Y,N,2200,N,N,Y,Y,N,N,N,N,Not Worth-It
+,Barat,Sambikerep,60,90,2,2,2,"Rp1,000,000,000",Belum,Selatan,Tengah,6,0,Y,Y,2200,N,N,N,N,N,N,N,N,Not Worth-It
+,Barat,Lakarsantri,55,80,3,2,2,"Rp1,600,000,000",Belum,Selatan,Tengah,6,0,Y,Y,5500,N,N,N,N,N,N,N,N,Not Worth-It
+,Timur,Mulyorejo,81,114,3,3,2,"Rp1,650,000,000",Belum,Selatan,Tengah,8,0,Y,N,3500,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Gunung Anyar,200,70,3,2,1,"Rp1,000,000,000",Belum,Utara,Tengah,6,2,Y,N,2200,N,Y,N,N,N,N,N,N,Worth-It
+,Barat,Karang Pilang,205,180,3,2,1,"Rp2,500,000,000",Belum,Selatan,Tengah,6,3,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Sukolilo,200,165,4,3,1,"Rp2,600,000,000",Belum,Utara,Tengah,8,0,Y,N,2200,N,Y,N,Y,N,N,N,N,Worth-It
+,Timur,Rungkut,180,155,3,2,1,"Rp1,650,000,000",Belum,Selatan,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Rungkut,120,180,5,4,2,"Rp2,600,000,000",Belum,Utara,Tengah,8,2,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Selatan,Jambangan,256,450,5,5,2,"Rp2,900,000,000",Belum,Barat,Tengah,6,1,Y,N,2200,N,Y,N,Y,N,N,N,N,Worth-It
+,Barat,Lakarsantri,150,230,4,4,2,"Rp4,050,000,000",Belum,Timur,Tengah,6,2,Y,N,2200,N,N,N,N,N,N,N,N,Not Worth-It
+,Timur,Mulyorejo,300,200,4,2,1,"Rp3,350,000,000",Belum,Barat,Tengah,10,0,Y,N,2200,N,N,N,Y,N,N,N,N,Worth-It
+,Timur,Sukolilo,78,118,4,4,2,"Rp1,850,000,000",Belum,Selatan,Tengah,10,2,Y,N,2200,N,Y,Y,N,N,N,N,N,Worth-It
+,Barat,Dukuh Pakis,250,250,4,3,2,"Rp1,990,000,000",Belum,Selatan,Hook,6,4,Y,N,2200,N,Y,N,Y,N,N,N,N,Worth-It
+,Barat,Pakal,94,150,3,3,1,"Rp1,300,000,000",Belum,Selatan,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Sukolilo,78,118,3,3,2,"Rp1,850,000,000",Belum,Selatan,Tengah,10,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Sukolilo,138,150,5,4,2,"Rp2,350,000,000",Belum,Selatan,Tengah,6,2,Y,N,4400,N,Y,N,N,N,N,N,N,Worth-It
+,Pusat,Gubeng,300,300,4,3,1,"Rp5,240,000,000",Belum,Barat,Tengah,6,1,Y,N,2200,N,N,N,N,N,N,N,N,Not Worth-It
+,Selatan,Gayungan,200,120,3,2,1,"Rp2,800,000,000",Belum,Timur,Tengah,6,2,Y,N,2200,N,Y,N,N,Y,N,N,N,Worth-It
+,Timur,Sukolilo,107,173,4,4,2,"Rp2,050,000,000",Belum,Selatan,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Selatan,Gayungan,320,320,6,4,2,"Rp3,250,000,000",Belum,Utara,Tengah,6,3,Y,N,5500,N,Y,N,N,N,N,N,N,Worth-It
+,Timur,Mulyorejo,165,180,3,3,1,"Rp1,320,000,000",Belum,Timur,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Mulyorejo,72,97,3,2,2,"Rp2,300,000,000",Belum,Selatan,Tengah,6,0,Y,N,4400,N,N,N,N,N,N,N,N,Not Worth-It
+,Timur,Rungkut,200,160,3,3,1,"Rp1,800,000,000",Belum,Utara,Tengah,8,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Utara,Krembangan,250,250,4,2,2,"Rp4,500,000,000",Belum,Utara,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Not Worth-It
+,Timur,Mulyorejo,135,220,5,4,2,"Rp3,190,000,000",Belum,Selatan,Tengah,8,0,Y,N,3500,N,N,N,N,N,N,N,N,Not Worth-It
+,Timur,Sukolilo,78,118,3,3,2,"Rp1,850,000,000",Belum,Utara,Tengah,6,0,Y,N,3500,N,N,N,N,N,N,N,N,Worth-It
+,Pusat,Tambaksari,360,200,4,3,1,"Rp2,400,000,000",Belum,Selatan,Tengah,6,0,Y,N,2200,N,Y,N,N,N,N,N,N,Worth-It
+,Barat,Dukuh Pakis,135,135,3,2,1,"Rp2,500,000,000",Belum,Selatan,Tengah,6,0,Y,N,4400,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Mulyorejo,135,126,3,2,1,"Rp1,750,000,000",Belum,Barat,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Mulyorejo,162,252,5,4,2,"Rp3,200,000,000",Belum,Timur,Tengah,6,0,Y,Y,3500,N,N,N,N,N,N,N,N,Not Worth-It
+,Timur,Mulyorejo,60,100,3,2,2,"Rp1,300,000,000",Belum,Utara,Tengah,6,0,Y,N,2200,N,Y,Y,Y,N,N,N,N,Not Worth-It
+,Barat,Lakarsantri,200,300,4,4,2,"Rp2,450,000,000",Belum,Selatan,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Pusat,Tambaksari,360,200,4,3,1,"Rp2,560,000,000",Belum,Selatan,Tengah,6,0,Y,N,2200,N,Y,Y,Y,N,N,N,N,Worth-It
+,Barat,Sukomanunggal,306,400,5,3,2,"Rp5,750,000,000",Belum,Barat,Tengah,6,0,Y,N,5500,N,N,N,Y,N,N,N,N,Not Worth-It
+,Selatan,Gayungan,275,300,4,2,2,"Rp2,600,000,000",Belum,Utara,Tengah,6,0,Y,N,2200,N,Y,N,Y,N,N,N,N,Worth-It
+,Barat,Sukomanunggal,203,210,5,3,2,"Rp2,340,000,000",Belum,Barat,Tengah,6,0,Y,N,3500,N,Y,N,N,N,N,N,N,Worth-It
+,Utara,Krembangan,250,250,5,4,2,"Rp5,000,000,000",Belum,Timur,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Sukolilo,91,135,2,3,2,"Rp2,700,000,000",Belum,Selatan,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Not Worth-It
+,Timur,Tenggilis Mejoyo,347,280,7,3,2,"Rp2,590,000,000",Belum,Selatan,Tengah,6,2,Y,N,2200,N,N,Y,N,N,N,N,N,Not Worth-It
+,Selatan,Gayungan,150,176,5,3,2,"Rp2,400,000,000",Belum,Barat,Tengah,6,2,Y,N,5500,N,N,N,N,N,N,N,N,Worth-It
+,Pusat,Genteng,92,65,2,2,1,"Rp875,000,000",Belum,Timur,Tengah,6,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Selatan,Sawahan,100,200,3,2,2,"Rp3,900,000,000",Belum,Utara,Tengah,6,0,N,N,2200,N,N,N,N,N,N,N,N,Not Worth-It
+,Timur,Mulyorejo,140,218,5,5,2,"Rp3,800,000,000",Belum,Selatan,Tengah,3,0,N,N,2200,N,Y,N,N,N,N,N,Y,Not Worth-It
+,Timur,Mulyorejo,140,218,5,5,2,"Rp3,800,000,000",Belum,Timur,Tengah,3,0,N,N,2200,N,Y,N,N,N,N,N,Y,Not Worth-It
+,Pusat,Genteng,128,295,5,4,2,"Rp4,750,000,000",Belum,Selatan,Tengah,6,0,N,N,2200,N,N,N,N,N,N,N,N,Not Worth-It
+,Pusat,Genteng,125,147,4,4,2,"Rp1,800,000,000",Belum,Barat,Tengah,6,1,N,Y,2200,N,N,N,N,N,N,N,N,Worth-It
+,Utara,Bulak,90,135,5,4,2,"Rp1,950,000,000",Belum,Selatan,Tengah,4,2,N,N,2200,N,N,N,N,N,N,N,N,Not Worth-It
+,Pusat,Genteng,160,94,5,4,2,"Rp1,750,000,000",Belum,Utara,Tengah,6,2,Y,N,2200,N,N,N,N,Y,N,N,N,Worth-It
+,Pusat,Genteng,110,110,4,4,2,"Rp1,800,000,000",Belum,Selatan,Tengah,4,2,Y,N,2200,N,N,N,N,N,N,N,N,Not Worth-It
+,Timur,Mulyorejo,72,97,3,2,2,"Rp2,500,000,000",Belum,Selatan,Tengah,8,2,N,N,2200,N,N,N,N,N,N,N,N,Not Worth-It
+,Utara,Kenjeran,102,101,4,3,2,"Rp1,699,000,000",Belum,Selatan,Tengah,8,2,N,N,5500,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Pakal,120,150,3,1,2,"Rp1,700,000,000",Belum,Selatan,Tengah,4,2,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Mulyorejo,120,200,3,3,2,"Rp2,600,000,000",Belum,Barat,Tengah,4,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Sambikerep,104,145,3,3,2,"Rp2,000,000,000",Belum,Barat,Tengah,8,2,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Pakal,103,150,4,4,2,"Rp1,100,000,000",Belum,Selatan,Hook,6,0,Y,Y ,3300,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Sukolilo,126,126,3,3,2,"Rp1,500,000,000",Belum,Timur,Tengah,3,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Lakarsantri,139,94,3,1,1,"Rp1,200,000,000",Belum,Utara,Tengah,8,2,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Wiyung,90,180,2,2,2,"Rp1,100,000,000",Belum,Selatan,Tengah,8,1,Y,N,3500,N,N,N,N,N,N,N,N,Worth-It
+,Utara,Kenjeran,200,200,3,2,1,"Rp2,000,000,000",Belum,Utara,Tengah,6,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Pusat,Gubeng,132,132,4,2,1,"Rp1,550,000,000",Belum,Selatan,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Tandes,97,72,3,1,1,"Rp610,000,000",Belum,Selatan,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Karangpilang,105,140,4,3,2,"Rp960,000,000",Belum,Selatan,Tengah,8,2,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Wiyung,166,200,3,4,2,"Rp2,400,000,000",Belum,Utara,Tengah,8,2,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Sukomanunggal,225,162,4,1,1,"Rp2,700,000,000",Belum,Timur,Tengah,7,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Sambikerep,290,136,4,1,2,"Rp3,500,000,000",Belum,Selatan,Tengah,7,2,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Lakarsantri,240,76,4,1,2,"Rp2,600,000,000",Belum,Selatan,Tengah,7,2,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Sukomanunggal,126,126,4,3,2,"Rp1,400,000,000",Belum,Utara,Tengah,6,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Tandes,146,108,4,3,2,"Rp1,500,000,000",Belum,Timur,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Rungkut,150,300,4,3,2,"Rp1,550,000,000",Belum,Utara,Tengah,5,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Sukolilo,100,100,5,4,1,"Rp1,800,000,000",Belum,Selatan,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Not Worth-It
+,Barat,Pakal,72,90,2,1,1,"Rp385,000,000",Belum,Selatan,Tengah,6,1,Y,N,1300,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Lakarsantri,90,60,2,2,2,"Rp1,100,000,000",Belum,Selatan,Tengah,8,1,Y,N,3500,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Tenggilis Mejoyo,180,144,5,2,1,"Rp1,500,000,000",Belum,Selatan,Tengah,8,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Selatan,Sawahan,231,231,3,2,2,"Rp2,300,000,000",Belum,Selatan,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Selatan,Sawahan,153,100,4,2,1,"Rp1,150,000,000",Belum,Utara,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Gunung Anyar,90,84,3,2,2,"Rp1,600,000,000",Belum,Selatan,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Sukolilo,126,126,4,3,2,"Rp1,500,000,000",Belum,Timur,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Tandes,72,80,2,2,2,"Rp900,000,000",Belum,Selatan,Tengah,8,1,Y,N,1300,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Wiyung,105,200,3,1,2,"Rp1,700,000,000",Belum,Selatan,Tengah,3,2,Y,N,3500,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Tenggilis Mejoyo,347,347,7,3,1,"Rp2,700,000,000",Belum,Barat,Tengah,6,2,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Pusat,Tambaksari,150,150,4,3,1,"Rp1,750,000,000",Belum,Selatan,Tengah,4,2,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Dukuh Pakis,105,189,2,1,2,"Rp2,100,000,000",Belum,Utara,Tengah,4,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Dukuh Pakis,99,110,3,3,2,"Rp1,300,000,000",Belum,Selatan,Tengah,6,2,Y,Y,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Mulyorejo,120,150,3,2,2,"Rp2,600,000,000",Belum,Barat,Tengah,6,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Benowo,78,42,2,1,1,"Rp425,000,000",Belum,Barat,Tengah,4,1,Y,N,1300,N,N,N,N,N,N,N,N,Not Worth-It
+,Timur,Mulyorejo,120,100,4,2,2,"Rp1,600,000,000",Belum,Selatan,Tengah,6,2,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Karangpilang,102,67,2,2,2,"Rp1,700,000,000",Belum,Selatan,Tengah,8,1,Y,N,3500,Y,Y,Y,Y,Y,N,N,Y,Worth-It
+,Timur,Mulyorejo,156,256,5,5,2,"Rp2,900,000,000",Belum,Utara,Tengah,6,2,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Wiyung,190,175,4,1,2,"Rp2,100,000,000",Belum,Selatan,Tengah,7,2,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Pakal,72,36,3,2,2,"Rp710,000,000",Belum,Selatan,Tengah,6,1,Y,N,1300,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Pakal,72,100,3,2,2,"Rp710,000,000",Belum,Selatan,Tengah,6,1,Y,N,1300,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Wiyung,96,156,3,1,2,"Rp2,600,000,000",Belum,Selatan,Tengah,6,0,Y,Y,2200,N,N,N,N,N,N,N,N,Not Worth-It
+,Barat,Benowo,90,45,2,1,2,"Rp650,000,000",Belum,Utara,Tengah,6,1,Y,N,1300,N,N,N,N,N,N,N,N,Not Worth-It
+,Barat,Pakal,120,120,3,2,1,"Rp1,200,000,000",Belum,Utara,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Wiyung,120,100,3,2,1,"Rp1,300,000,000",Belum,Selatan,Tengah,10,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Sukolilo,126,126,4,3,1,"Rp1,500,000,000",Belum,Timur,Tengah,6,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Selatan,Wonocolo,120,200,4,4,2,"Rp2,300,000,000",Belum,Timur,Tengah,6,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Sukolilo,119,91,3,1,1,"Rp1,400,000,000",Belum,Selatan,Tengah,8,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Sambikerep,187,180,3,3,1,"Rp1,200,000,000",Belum,Selatan,Tengah,6,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Wiyung,101,90,4,2,2,"Rp1,300,000,000",Belum,Selatan,Tengah,6,1,Y,N,1300,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Sambikerep,96,75,2,2,2,"Rp1,500,000,000",Belum,Selatan,Tengah,6,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Wiyung,135,117,4,3,1,"Rp1,500,000,000",Belum,Utara,Tengah,6,1,Y,N,4400,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Tandes,144,268,4,4,2,"Rp5,800,000,000",Belum,Selatan,Tengah,6,0,Y,Y ,3500,N,N,N,N,N,N,N,N,Not Worth-It
+,Barat,Lakarsantri,105,200,4,3,2,"Rp1,250,000,000",Belum,Selatan,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Sukomanunggal,225,15,4,3,1,"Rp3,500,000,000",Belum,Selatan,Tengah,6,3,Y,N,4400,N,N,N,N,N,N,N,N,Not Worth-It
+,Barat,Lakarsantri,126,140,3,2,1,"Rp1,400,000,000",Belum,Barat,Tengah,6,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Wiyung,175,270,4,1,2,"Rp3,200,000,000",Belum,Selatan,Tengah,8,2,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Wiyung,126,126,3,4,1,"Rp1,750,000,000",Belum,Selatan,Tengah,6,2,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Tandes,120,120,5,3,2,"Rp1,200,000,000",Belum,Selatan,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Sambikerep,80,70,4,2,2,"Rp1,200,000,000",Belum,Timur,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Wiyung,262,400,3,3,2,"Rp2,300,000,000",Belum,Selatan,Tengah,8,2,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Pusat,Tambaksari,145,230,3,2,1,"Rp1,500,000,000",Belum,Timur,Tengah,8,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Wiyung,175,200,4,3,2,"Rp1,800,000,000",Belum,Utara,Tengah,6,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Pusat,Gubeng,91,91,5,3,2,"Rp1,500,000,000",Belum,Selatan,Tengah,8,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Pusat,Gubeng,120,70,3,3,2,"Rp1,550,000,000",Belum,Selatan,Tengah,8,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Sukolilo,192,250,4,4,2,"Rp2,150,000,000",Belum,Selatan,Tengah,8,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Selatan,Jambangan,135,75,2,2,1,"Rp2,000,000,000",Belum,Selatan,Tengah,6,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Mulyorejo,91,135,3,3,2,"Rp2,500,000,000",Belum,Selatan,Tengah,6,2,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Selatan,Gayungan,170,170,4,4,2,"Rp1,900,000,000",Belum,Selatan,Tengah,8,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Pakal,90,110,4,3,1,"Rp1,630,000,000",Belum,Selatan,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Pusat,Bubutan,180,240,5,3,2,"Rp1,350,000,000",Belum,Selatan,Tengah,6,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Selatan,Sawahan,115,300,3,2,2,"Rp2,500,000,000",Belum,Selatan,Tengah,6,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Selatan,Wonocolo,209,200,3,3,1,"Rp2,850,000,000",Belum,Utara,Tengah,6,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Karangpilang,112,80,3,1,1,"Rp1,000,000,000",Belum,Selatan,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Selatan,Gayungan,175,175,4,2,1,"Rp2,500,000,000",Belum,Barat,Tengah,6,2,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Selatan,Jambangan,150,100,3,2,1,"Rp2,500,000,000",Belum,Barat,Tengah,8,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Rungkut,207,90,3,1,1,"Rp2,100,000,000",Belum,Timur,Hook,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Rungkut,72,80,3,2,2,"Rp1,000,000,000",Belum,Selatan,Tengah,6,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Mulyorejo,107,160,4,3,2,"Rp2,250,000,000",Belum,Selatan,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Sukolilo,90,60,2,1,1,"Rp1,200,000,000",Belum,Selatan,Tengah,8,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Mulyorejo,156,256,4,3,2,"Rp2,950,000,000",Belum,Utara,Tengah,6,0,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Sukolilo,135,135,2,1,1,"Rp2,200,000,000",Belum,Selatan,Tengah,6,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Rungkut,253,110,3,2,1,"Rp3,000,000,000",Belum,Selatan,Hook,6,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Rungkut,78,45,2,1,1,"Rp1,300,000,000",Belum,Timur,Tengah,10,2,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Rungkut,94,160,4,3,2,"Rp1,750,000,000",Belum,Selatan,Tengah,6,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Rungkut,84,90,3,2,2,"Rp1,200,000,000",Belum,Selatan,Tengah,6,2,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Timur,Sukolilo,75,150,4,4,2,"Rp1,450,000,000",Belum,Selatan,Tengah,8,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Pusat,Tambaksari,84,152,3,3,2,"Rp1,300,000,000",Belum,Barat,Tengah,5,1,Y,N,2200,N,N,N,N,N,N,N,N,Worth-It
+,Barat,Lakarsantri,105,120,2,2,1,"Rp950,000,000",Belum,Utara,Tengah,6,1,Y,N,1300,N,N,N,N,N,N,N,N,Worth-It
+https://properti1.com/iklan/rumah-dijual-di-manyar-rejo-sukolilo-surabaya-timur-69b4d83746a57e181a5a616e,Timur,Sukolilo,120,100,5,2,1,"Rp1,400,000,000",Belum,Selatan,Tengah,6,1,N,N,2200,N,N,N,N,N,N,N,N,Not Worth-It
+https://properti1.com/iklan/jual-murah-rumah-siap-huni-di-ploso-timur-surabaya-69b3711946a57e0da25a60c3,Timur,Gunung Anyar,116,70,2,2,1,"Rp900,000,000",Belum,Barat,Tengah,6,1,Y,Y,1300,Y,Y,Y,Y,Y,Y,N,Y,Worth-It
+https://properti1.com/iklan/dijual-rumah-modern-minimalis-premium-quality-di-sutorejo-prima-indah-surabaya-69b385fa46a57e02905a60d7,Timur,Mulyorejo,90,160,4,3,2,"Rp1,999,000,000",Belum,Selatan,Tengah,8,1,N,N,2200,Y,Y,Y,Y,Y,N,N,Y,Not Worth-It
+https://properti1.com/iklan/jual-rumah-lokasi-strategis-di-bhaskara-surabaya-2-lantai-siap-huni-shm-dekat-kampus-its-pakuwon-city-sutorejo-69be224691a17af9fa848809,Timur,Mulyorejo,120,100,4,2,2,"Rp1,600,000,000",Belum,Selatan,Tengah,6,2,N,N,3500,Y,Y,Y,Y,Y,N,N,Y,Worth-It
+https://properti1.com/iklan/dijual-rumah-mewah-di-gunung-anyar-tambak-surabaya-69afb0bd98e6c820631b262f,Timur,Rungkut,97,140,3,2,2,"Rp880,000,000",Belum,Barat,Tengah,3,1,N,N,4400,N,Y,N,N,Y,N,N,Y,Worth-It
+https://properti1.com/iklan/dijual-rumah-baru-modern-2-lantai-di-sutorejo-prima-indah-utara-mulyorejo-rungkut-surabaya-dekat-pakuwon-city-its-69b6221946a57e72d85a61de,Timur,Mulyorejo,90,160,4,3,2,"Rp1,990,000,000",Belum,Selatan,Tengah,6,1,N,N,2200,Y,Y,Y,Y,Y,N,N,Y,Not Worth-It
+https://properti1.com/iklan/dijual-rumah-murah-siap-huni-di-karang-empat-surabaya-69b8c92291a17a15ba848682,Timur,Gunung Anyar,222,200,4,2,2,"Rp1,650,000,000",Belum,Selatan,Tengah,6,1,Y,Y,2200,Y,Y,Y,Y,Y,Y,N,Y,Worth-It
+https://properti1.com/iklan/dijual-rumah-cantik-baru-siap-huni-di-gunung-anyar-surabaya-timur-69b16ee198e6c895d91b274a,Timur,Gunung Anyar,97,140,3,3,2,"Rp880,000,000",Belum,Barat,Tengah,6,1,N,N,4400,N,Y,N,N,Y,N,N,Y,Worth-It
+https://properti1.com/iklan/jual-rumah-2-lantai-strategis-area-lebak-indah-surabaya-69b37cbf46a57ed7055a60ce,Timur,Gunung Anyar,84,120,3,3,2,"Rp1,200,000,000",Belum,Barat,Tengah,8,1,N,N,2200,Y,Y,Y,Y,Y,Y,N,Y,Worth-It
+https://properti1.com/iklan/dijual-cepat-rumah-rungkut-harapan-surabaya-69aa671f0f5bfaed16fc2d3e,Timur,Rungkut,200,300,5,2,2,"Rp2,500,000,000",Belum,Selatan,Tengah,6,1,Y,Y,2200,Y,Y,N,Y,Y,N,N,Y,Not Worth-It
+https://properti1.com/iklan/dijual-rumah-baru-siap-huni-sisa-3-unit-di-mulyosari-surabaya-69c4aa3a91a17af1a1848a04,Timur,Mulyorejo,85,140,4,4,2,"Rp1,700,000,000",Belum,Utara,Tengah,10,1,Y,Y,4400,Y,Y,Y,Y,Y,N,N,Y,Worth-It
+https://properti1.com/iklan/dijual-rumah-baru-modern-minimalis-di-nirwana-eksekutif-surabaya-69b623c146a57eecdd5a61e0,Timur,Rungkut,65,85,3,3,2,"Rp1,300,000,000",Belum,Utara,Hook,6,2,Y,N,2200,Y,Y,Y,N,Y,N,Y,Y,Worth-It
+https://properti1.com/iklan/jual-rumah-murah-babatan-pantai-utara-surabaya-akses-annyeong-69b0e3ce98e6c86a2c1b26e9,Timur,Mulyorejo,96,120,5,2,3,"Rp1,100,000,000",Belum,Timur,Tengah,6,2,N,N,2200,Y,Y,Y,Y,Y,N,N,Y,Not Worth-It
+https://properti1.com/iklan/jual-rumah-minimalis-murah-di-gununganyar-tambak-surabaya-shm-69c35de291a17a50fb848978,Timur,Rungkut,97,140,3,2,2,"Rp846,000,000",Belum,Barat,Tengah,6,1,Y,Y,4400,Y,Y,Y,Y,Y,N,N,Y,Worth-It
+https://properti1.com/iklan/jual-cepat-siap-huni-rumah-2-lantai-shm-di-bhaskarasari-surabaya-dekat-pakuwon-city-kampus-its-69bd520e91a17a9f708487e6,Timur,Mulyorejo,120,100,4,2,2,"Rp1,600,000,000",Belum,Selatan,Tengah,6,2,N,N,3500,Y,Y,Y,Y,Y,N,N,Y,Worth-It
+https://properti1.com/iklan/dijual-rumah-nyaman-di-mulyosari-prima-surabaya-dekat-pakuwon-city-its-69c38e3c91a17a4d5a84899a,Timur,Mulyorejo,108,130,4,3,2,"Rp2,500,000,000",Belum,Barat,Tengah,6,1,Y,Y,3500,Y,Y,Y,Y,Y,N,N,Y,Not Worth-It
+https://properti1.com/iklan/dijual-rumah-2-lantai-baru-strategis-di-pakuwon-city-suvadiva-grand-island-surabaya-69afc80898e6c8c0971b2662,Timur,Mulyorejo,72,120,2,2,2,"Rp2,900,000,000",Belum,Utara,Tengah,8,1,Y,Y,4400,Y,Y,Y,Y,Y,N,N,Y,Not Worth-It
+https://properti1.com/iklan/dijual-rumah-baru-gress-wiguna-selatan-surabaya-timur-69b620a146a57e50515a61dd,Timur,Rungkut,67,67,3,2,2,"Rp935,000,000",Belum,Utara,Tengah,6,1,N,N,2200,Y,Y,Y,Y,Y,N,N,Y,Not Worth-It
+https://properti1.com/iklan/dijual-rumah-2-lantai-di-rungkut-mapan-barat-surabaya-timur-69aba1570f5bfa0b6afc2dba,Timur,Rungkut,126,230,6,3,2,"Rp1,710,000,000",Belum,Selatan,Tengah,6,1,Y,Y,2200,Y,Y,Y,Y,Y,N,N,Y,Worth-It
+https://properti1.com/iklan/dijual-rumah-1-5-lantai-di-semampir-tengah-surabaya-timur-69ab9c4b0f5bfa48acfc2db4,Timur,Sukolilo,195,194,3,2,2,"Rp2,137,500,000",Belum,Barat,Tengah,6,2,Y,Y,2200,Y,Y,Y,Y,Y,N,N,Y,Not Worth-It
+https://properti1.com/iklan/dijual-rumah-baru-minimalis-2-lantai-di-rungkut-mapan-surabaya-timur-69b18b2e98e6c889ce1b275c,Timur,Rungkut,110,125,3,3,2,"Rp1,800,000,000",Belum,Utara,Tengah,6,2,N,N,2200,Y,Y,Y,Y,Y,N,N,Y,Not Worth-It
+https://properti1.com/iklan/jual-rumah-di-semolowaru-surabaya-cocok-jadi-hunian-kost-shm-dekat-merr-kampus-rumah-sakit-69c5ddfc91a17abd00848a91,Timur,Sukolilo,100,180,5,3,3,"Rp1,800,000,000",Belum,Timur,Tengah,,,Y,Y,2200,Y,Y,Y,Y,Y,N,N,Y,Not Worth-It
+https://properti1.com/iklan/dijual-rumah-baru-siap-huni-di-manyar-tirtoyoso-surabaya-69c49f4291a17a8bce8489f8,Timur,Mulyorejo,112,170,4,4,2,"Rp2,750,000,000",Belum,Timur,Tengah,10,2,N,N,2200,Y,Y,Y,Y,Y,N,N,Y,Not Worth-It
+https://properti1.com/iklan/dijual-rumah-di-medokan-kampung-surabaya-69a7bfda531b4e422ea62bac,Timur,Rungkut,104,90,3,2,1,"Rp940,000,000",Belum,Timur,Tengah,6,1,Y,Y,2200,Y,Y,Y,Y,Y,N,N,Y,Worth-It
+https://properti1.com/iklan/dijual-rumah-baru-modern-minimalis-di-panjang-jiwo-surabaya-69b62fa946a57e54fe5a61f0,Timur,Tenggilis Mejoyo,120,160,3,3,2,"Rp2,400,000,000",Belum,Selatan,Tengah,8,1,Y,Y,2200,Y,Y,Y,Y,Y,N,N,Y,Not Worth-It
+https://properti1.com/iklan/jual-rumah-nol-jalan-raya-tambaksari-surabaya-pinggir-jalan-besar-69b0e29098e6c81c071b26e5,Pusat,Tambaksari,180,160,2,2,1,"Rp1,800,000,000",Belum,Timur,Tengah,3,1,Y,Y,2200,Y,Y,Y,N,Y,Y,N,Y,Worth-It
+https://properti1.com/iklan/jual-rumah-baru-di-gunung-anyar-surabaya-ready-unit-tambak-medokan-rungkut-69aa35260f5bfa41bbfc2d11,Timur,Rungkut,55,100,2,1,2,"Rp797,000,000",Belum,Selatan,Tengah,6,1,N,N,1300,N,N,N,N,Y,N,N,Y,Not Worth-It
+https://properti1.com/iklan/rumah-dijual-di-kalongan-besar-krembangan-surabaya-utara-69719e773ced9b63d3212c79,Utara,Krembangan,246,485,5,2,2,"Rp2,350,000,000",Belum,Selatan,Tengah,6,0,N,N,2200,Y,Y,Y,N,Y,Y,N,Y,Worth-It
+https://properti1.com/iklan/rumah-dijual-di-perak-barat-krembangan-surabaya-utara-685ca349716b558165807676,Utara,Krembangan,93,93,4,1,1,"Rp1,125,000,000",Belum,Timur,Tengah,6,1,N,N,1300,Y,Y,Y,N,Y,Y,N,Y,Not Worth-It
+https://properti1.com/iklan/rumah-dijual-di-gading-indah-regency-bulak-surabaya-utara-69a5028c531b4e338aa629c8,Utara,Bulak,129,129,3,2,2,"Rp1,500,000,000",Belum,Selatan,Tengah,6,1,Y,Y,2200,N,Y,N,N,Y,N,N,N,Not Worth-It
+https://properti1.com/iklan/rumah-dijual-pantai-mentari-kenjeran-bulak-surabaya-utara-697081a53ced9b4e0c212bbb,Utara,Bulak,72,130,3,3,2,"Rp1,450,000,000",Belum,Utara,Tengah,3,1,Y,N,2200,N,N,N,N,Y,N,N,N,Not Worth-It
+https://properti1.com/iklan/rumah-dijual-di-kapasari-genteng-surabaya-pusat-6731c1b5f1c4285b4f1ad502,Pusat,Genteng,198,198,2,1,1,"Rp850,000,000",Belum,Utara,Tengah,6,1,N,N,900,Y,Y,Y,N,Y,N,N,Y,Worth-It
+https://properti1.com/iklan/jual-cepat-rumah-di-tambakrejo-simokerto-surabaya-pusat-69707e493ced9bba1e212baf,Pusat,Simokerto,150,222,3,1,1,"Rp800,000,000",Belum,Utara,Tengah,6,1,N,N,2200,Y,Y,Y,N,Y,N,N,N,Worth-It
+https://properti1.com/iklan/rumah-dijual-di-kedung-klinter-kedungdoro-tegalsari-surabaya-pusat-6905bb0e4aa347dd8097ad0a,Pusat,Tegalsari,97,97,6,2,2,"Rp1,100,000,000",Belum,Selatan,Tengah,3,1,N,N,1300,Y,Y,Y,Y,Y,Y,N,Y,Not Worth-It
+https://properti1.com/iklan/rumah-dijual-wonorejo-kedungdoro-tegalsari-surabaya-pusat-67079a81e06a099a5280c952,Pusat,Tegalsari,182,215,6,3,1,"Rp1,800,000,000",Belum,Barat,Tengah,6,1,N,N,5500,Y,Y,Y,Y,Y,Y,N,Y,Worth-It
+https://properti1.com/iklan/rumah-dijual-di-karang-tembok-semampir-surabaya-utara-692933db8bebd41720cc005e,Utara,Semampir,90,90,3,2,1,"Rp1,200,000,000",Belum,Selatan,Tengah,6,0,N,N,1300,Y,Y,Y,N,Y,Y,N,N,Not Worth-It
+https://properti1.com/iklan/jual-rumah-3-lantai-shm-murah-di-sukodono-semampir-surabaya-6509405dc6c7f5ecf6ff4280,Utara,Semampir,101,266,5,3,3,"Rp1,530,000,000",Belum,Utara,Tengah,6,3,Y,N,2200,Y,Y,Y,N,Y,Y,N,N,Worth-It
+https://properti1.com/iklan/dijual-rumah-minimalis-2-lantai-di-bawah-pasaran-di-jambangan-surabaya-selatan-69b2a0587a92016963c4aafa,Selatan,Jambangan,100,96,4,3,2,"Rp1,000,000,000",Belum,Utara,Tengah,6,1,Y,N,2200,N,Y,N,N,Y,N,N,Y,Worth-It
+https://properti1.com/iklan/rumah-dijual-di-bendul-merisi-wonocolo-surabaya-selatan-6985705d61f5e119cd3c5708,Selatan,Wonocolo,102,120,3,2,1,"Rp1,500,000,000",Belum,Utara,Tengah,6,1,N,N,2200,N,Y,N,N,Y,N,N,N,Not Worth-It
+https://properti1.com/iklan/rumah-dijual-di-bendul-merisi-permai-surabaya-selatan-6984343961f5e123e03c562b,Selatan,Wonocolo,120,120,4,2,2,"Rp1,500,000,000",Belum,Timur,Tengah,6,1,N,N,1300,Y,Y,Y,Y,Y,N,N,N,Worth-It
+https://properti1.com/iklan/rumah-dijual-di-bendul-merisi-wonocolo-surabaya-selatan-69841de161f5e13e443c5612,Selatan,Wonocolo,90,90,4,2,1,"Rp1,100,000,000",Belum,Selatan,Tengah,6,1,N,N,2200,Y,Y,Y,Y,Y,N,N,N,Not Worth-It
