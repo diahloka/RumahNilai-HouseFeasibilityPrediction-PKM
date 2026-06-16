@@ -1,6 +1,6 @@
 # House Price Worth-it Classifier for Gen Z in Surabaya
 
-[![Open In Colab](https://drive.google.com/file/d/1HoRob39mlsY3sz9JRUxuULKb8BhSdWLN/view?usp=sharing)
+🔗 **[Open Project in Google Colab](https://drive.google.com/file/d/1HoRob39mlsY3sz9JRUxuULKb8BhSdWLN/view?usp=sharing)**
 
 ## 📌 Project Overview
 This repository contains the official implementation of our **PKM-AI (Student Scientific Article)** project titled: 
