@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>RumahNilai — Worth It Classifier Surabaya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#0d1117;--paper:#f7f4ee;--gold:#c9922a;--gold-light:#e8c06a;
+  --sage:#2e7d52;--sage-bg:#e8f5ee;--rust:#b84040;--rust-bg:#fbeaea;
+  --muted:#7a7570;--line:#e4dfd5;--white:#ffffff;
+  --shadow:0 2px 20px rgba(0,0,0,.07);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(247,244,238,.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:62px}
+.nav-logo{font-family:'Playfair Display',serif;font-size:21px;font-weight:900;letter-spacing:-.3px}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:2px}
+.nav-btn{padding:7px 15px;border-radius:100px;font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;border:none;background:none;font-family:'DM Sans',sans-serif;transition:all .18s}
+.nav-btn:hover{color:var(--ink);background:var(--line)}
+.nav-btn.active{background:var(--ink);color:var(--paper)}
+.nav-tag{font-size:10px;font-weight:600;letter-spacing:1.8px;color:var(--muted);text-transform:uppercase}
+
+.page{display:none}.page.on{display:block}
+
+.hero{background:var(--ink);padding:80px 48px 72px;position:relative;overflow:hidden}
+.hero-glow{position:absolute;top:-80px;right:-60px;width:520px;height:520px;background:radial-gradient(circle,rgba(201,146,42,.18) 0%,transparent 65%);pointer-events:none}
+.hero-glow2{position:absolute;bottom:-60px;left:-40px;width:340px;height:340px;background:radial-gradient(circle,rgba(46,125,82,.1) 0%,transparent 65%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:52px;background:var(--paper);clip-path:ellipse(55% 100% at 50% 100%)}
+.hero-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.15fr 1fr;gap:72px;align-items:center}
+.hero-eye{display:inline-flex;align-items:center;gap:8px;background:rgba(201,146,42,.13);border:1px solid rgba(201,146,42,.25);padding:5px 14px;border-radius:100px;font-size:10px;font-weight:600;letter-spacing:2.2px;color:#e8c06a;text-transform:uppercase;margin-bottom:22px}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(34px,4vw,52px);font-weight:900;color:#f5f2eb;line-height:1.07;margin-bottom:18px}
+.hero-h1 em{color:var(--gold);font-style:italic}
+.hero-sub{font-size:14.5px;color:rgba(245,242,235,.45);line-height:1.75;max-width:420px}
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.stat{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:22px;text-align:center;transition:background .2s}
+.stat:hover{background:rgba(255,255,255,.08)}
+.stat-n{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:6px}
+.stat-l{font-size:9.5px;color:rgba(245,242,235,.38);font-weight:500;text-transform:uppercase;letter-spacing:1.2px}
+.hero-btns{grid-column:1/-1;display:flex;gap:12px;margin-top:-12px}
+.btn-gold{padding:13px 28px;background:var(--gold);color:var(--ink);border:none;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,146,42,.35)}
+.btn-ghost{padding:13px 28px;background:transparent;color:rgba(245,242,235,.6);border:1.5px solid rgba(245,242,235,.18);border-radius:100px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s}
+.btn-ghost:hover{border-color:rgba(245,242,235,.4);color:#f5f2eb}
+
+.how{max-width:1120px;margin:56px auto;padding:0 48px}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.how-card{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:28px;transition:transform .2s,box-shadow .2s}
+.how-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.how-num{font-family:'Playfair Display',serif;font-size:38px;font-weight:900;color:rgba(201,146,42,.22);line-height:1;margin-bottom:14px}
+.how-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;margin-bottom:8px}
+.how-desc{font-size:13px;color:var(--muted);line-height:1.65}
+
+.wrap{max-width:1120px;margin:0 auto;padding:52px 48px}
+.sec-label{font-size:9.5px;font-weight:600;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;margin-bottom:6px}
+.sec-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;margin-bottom:28px}
+
+.form-card{background:var(--white);border-radius:24px;padding:36px;border:1px solid var(--line);box-shadow:var(--shadow);max-width:880px}
+.form-block{margin-bottom:30px}
+.form-block-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;margin-bottom:16px;padding-bottom:11px;border-bottom:1px solid var(--line)}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.ff label{display:block;font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.ff input,.ff select{width:100%;padding:10px 13px;border:1.5px solid var(--line);border-radius:11px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);background:var(--paper);transition:all .18s;appearance:auto}
+.ff input:focus,.ff select:focus{outline:none;border-color:var(--gold);background:var(--white);box-shadow:0 0 0 3px rgba(201,146,42,.1)}
+.form-submit{width:100%;padding:15px;background:var(--gold);color:var(--ink);border:none;border-radius:13px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;margin-top:4px}
+.form-submit:hover:not(:disabled){background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,146,42,.3)}
+.form-submit:disabled{opacity:.5;cursor:not-allowed}
+
+.check-wrap{display:grid;grid-template-columns:1fr 400px;gap:24px;align-items:start}
+.result-pane{background:var(--white);border-radius:24px;padding:36px 28px;border:1px solid var(--line);box-shadow:var(--shadow);min-height:440px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:sticky;top:78px}
+.idle-icon{font-size:56px;margin-bottom:14px;opacity:.7}
+.idle-txt{font-size:14px;color:var(--muted);line-height:1.75}
+.dots{display:flex;gap:7px;justify-content:center;margin:20px 0}
+.dot{width:9px;height:9px;background:var(--gold);border-radius:50%;animation:bop 1.2s infinite ease-in-out}
+.dot:nth-child(2){animation-delay:.18s}.dot:nth-child(3){animation-delay:.36s}
+@keyframes bop{0%,80%,100%{transform:scale(.65);opacity:.35}40%{transform:scale(1.25);opacity:1}}
+.verdict{animation:fadeUp .4s ease;width:100%;display:flex;flex-direction:column;align-items:center}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.model-chip{display:inline-flex;align-items:center;gap:5px;background:var(--paper);border:1px solid var(--line);padding:4px 12px;border-radius:100px;font-size:9.5px;font-weight:600;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px}
+.verdict-icon{font-size:72px;margin-bottom:14px;line-height:1}
+.verdict-label{font-family:'Playfair Display',serif;font-size:30px;font-weight:900;margin-bottom:8px}
+.verdict-label.w{color:var(--sage)}.verdict-label.n{color:var(--rust)}
+.verdict-badge{display:inline-block;padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:22px}
+.verdict-badge.w{background:var(--sage-bg);color:var(--sage)}.verdict-badge.n{background:var(--rust-bg);color:var(--rust)}
+.prob-section{width:100%;margin-bottom:12px}
+.prob-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;width:100%}
+.prob-lbl{font-size:11.5px;font-weight:500;color:var(--ink);width:100px;text-align:right}
+.prob-track{flex:1;height:8px;background:var(--line);border-radius:100px;overflow:hidden}
+.prob-fill{height:100%;border-radius:100px;transition:width 1.2s cubic-bezier(.22,1,.36,1)}
+.prob-fill.w{background:linear-gradient(90deg,#81c784,var(--sage))}.prob-fill.n{background:linear-gradient(90deg,#ef9a9a,var(--rust))}
+.prob-pct{font-size:12px;color:var(--muted);width:36px;text-align:left;font-weight:600}
+.info-note{font-size:12px;color:var(--muted);padding:12px 14px;background:var(--paper);border-radius:10px;line-height:1.7;width:100%;text-align:left}
+
+.search-panel{background:var(--white);border-radius:20px;padding:24px 28px;margin-bottom:22px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.search-row{display:flex;gap:14px;align-items:flex-end;flex-wrap:wrap}
+.sf{flex:1;min-width:150px}
+.sf label{display:block;font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.sf input,.sf select{width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:11px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);background:var(--paper);transition:all .18s;appearance:auto}
+.sf input:focus,.sf select:focus{outline:none;border-color:var(--gold);background:var(--white)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{padding:7px 16px;border-radius:100px;border:1.5px solid var(--line);background:var(--white);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .18s}
+.chip:hover{border-color:var(--gold);color:var(--ink)}.chip.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.res-count{font-family:'Playfair Display',serif;font-size:17px;margin-bottom:18px}
+.res-count b{color:var(--gold)}
+.house-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.hcard{background:var(--white);border-radius:20px;border:1px solid var(--line);overflow:hidden;transition:transform .22s,box-shadow .22s}
+.hcard:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.1)}
+.hcard-top{padding:20px 20px 0;display:flex;justify-content:space-between;align-items:flex-start}
+.hcard-price{font-family:'Playfair Display',serif;font-size:20px;font-weight:700}
+.hcard-price small{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--muted);display:block;margin-bottom:2px}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:4px 11px;border-radius:100px;font-size:10.5px;font-weight:700}
+.badge.w{background:var(--sage-bg);color:var(--sage)}.badge.n{background:var(--rust-bg);color:var(--rust)}
+.hcard-loc{padding:7px 20px 0;font-size:13px;color:var(--muted)}
+.hcard-loc strong{color:var(--ink)}
+.hcard-div{height:1px;background:var(--line);margin:14px 0 0}
+.hcard-specs{padding:14px 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}
+.sv{font-family:'Playfair Display',serif;font-size:18px;font-weight:700}
+.sk{font-size:9.5px;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.empty{text-align:center;padding:72px 20px;color:var(--muted)}
+.empty .ei{font-size:52px;margin-bottom:14px}
+.toast{display:none;background:var(--sage-bg);border:1px solid #a5d6a7;border-radius:13px;padding:14px 18px;margin-bottom:22px;color:var(--sage);font-weight:500;font-size:13.5px;align-items:center;gap:10px}
+.toast.on{display:flex}
+.err-box{background:var(--rust-bg);border:1px solid #f5b8b8;border-radius:13px;padding:16px 18px;color:var(--rust);font-size:13px;line-height:1.7;width:100%;text-align:left}
+.err-box code{background:rgba(184,64,64,.1);padding:2px 7px;border-radius:5px;font-size:12px}
+
+/* Toggle Yes/No */
+.yn-group{display:flex;gap:0;border-radius:10px;overflow:hidden;border:1.5px solid var(--line);width:fit-content}
+.yn-btn{padding:8px 18px;border:none;background:var(--paper);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .18s;min-width:52px}
+.yn-btn:first-child{border-right:1.5px solid var(--line)}
+.yn-btn.active-y{background:var(--sage);color:#fff;font-weight:700}
+.yn-btn.active-n{background:var(--rust);color:#fff;font-weight:700}
+
+/* Facility grid */
+.fac-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.fac-item{display:flex;align-items:center;justify-content:space-between;background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:10px 14px;gap:10px;transition:border-color .18s}
+.fac-item:has(.yn-btn.active-y){border-color:var(--sage);background:var(--sage-bg)}
+.fac-item:has(.yn-btn.active-n){border-color:var(--line)}
+.fac-label{font-size:12.5px;font-weight:500;color:var(--ink);display:flex;align-items:center;gap:6px}
+.fac-label span{font-size:15px}
+
+/* Num input small */
+.ff-inline{display:flex;flex-direction:column;gap:6px}
+.ff-inline label{font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.ff-inline input{padding:8px 12px;border:1.5px solid var(--line);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);background:var(--paper);width:100%;transition:all .18s}
+.ff-inline input:focus{outline:none;border-color:var(--gold);background:var(--white);box-shadow:0 0 0 3px rgba(201,146,42,.1)}
+
+@media(max-width:960px){
+  nav{padding:0 16px}.nav-tag{display:none}
+  .hero{padding:52px 20px 52px}.hero-inner{grid-template-columns:1fr;gap:36px}.hero-btns{grid-column:1;margin-top:0}
+  .wrap{padding:36px 16px}.how{padding:0 16px}.how-grid{grid-template-columns:1fr}
+  .check-wrap{grid-template-columns:1fr}.result-pane{position:static;min-height:300px}
+  .form-card{padding:22px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Rumah<span>Nilai</span></div>
+  <div class="nav-links">
+    <button class="nav-btn active" onclick="go('home')">Beranda</button>
+    <button class="nav-btn" onclick="go('find')">🔍 Cari Rumah</button>
+    <button class="nav-btn" onclick="go('add')">➕ Tambah</button>
+    <button class="nav-btn" onclick="go('check')">⚡ Cek Worth It</button>
+  </div>
+  <div class="nav-tag">PKM-AI · UC Surabaya</div>
+</nav>
+
+<!-- HOME -->
+<div id="pg-home" class="page on">
+  <div class="hero">
+    <div class="hero-glow"></div><div class="hero-glow2"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eye">🌳 Area Surabaya</div>
+        <h1 class="hero-h1">Temukan Rumah<br/>yang <em>Worth It</em><br/>untuk Kamu</h1>
+        <p class="hero-sub">Sistem klasifikasi kelayakan harga properti Surabaya berbasis Machine Learning — dilatih dari survei 248 rumah dengan 10 responden ahli properti.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat"><div class="stat-n">248</div><div class="stat-l">Data Survei</div></div>
+        <div class="stat"><div class="stat-n" id="st-worth">—</div><div class="stat-l">Worth It</div></div>
+        <div class="stat"><div class="stat-n" id="st-not">—</div><div class="stat-l">Not Worth It</div></div>
+        <div class="stat"><div class="stat-n">78%</div><div class="stat-l">Akurasi Model</div></div>
+      </div>
+      <div class="hero-btns">
+        <button class="btn-gold" onclick="go('check')">⚡ Cek Worth It →</button>
+        <button class="btn-ghost" onclick="go('find')">Lihat Semua Rumah</button>
+      </div>
+    </div>
+  </div>
+  <div class="how">
+    <div style="text-align:center;margin-bottom:32px">
+      <div class="sec-label">Cara Kerja</div>
+      <div class="sec-title" style="margin-bottom:0">Bagaimana Model Kami Bekerja</div>
+    </div>
+    <div class="how-grid">
+      <div class="how-card"><div class="how-num">01</div><div class="how-title">Input Data Rumah</div><div class="how-desc">Masukkan detail properti: lokasi, luas tanah & bangunan, jumlah kamar, harga jual, arah hadap  posisi rumah, dan detail rumah lainnya.</div></div>
+      <div class="how-card"><div class="how-num">02</div><div class="how-title">Analisis 22 Fitur</div><div class="how-desc">Model Decision Tree menganalisis 22 fitur properti secara bersamaan, dilatih dari data survei ahli properti Surabaya.</div></div>
+      <div class="how-card"><div class="how-num">03</div><div class="how-title">Hasil Klasifikasi</div><div class="how-desc">Dapatkan verdict <strong>Worth It</strong> atau <strong>Not Worth It</strong> langsung dari model ML yang telah terlatih dengan akurasi 78%.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FIND -->
+<div id="pg-find" class="page">
+  <div class="wrap">
+    <div class="sec-label">Database Properti</div>
+    <div class="sec-title">Cari Rumah Sesuai Budget</div>
+    <div class="search-panel">
+      <div class="search-row">
+        <div class="sf"><label>Budget Maks (juta Rp)</label><input type="number" id="f-budget" placeholder="Contoh: 2000" oninput="filter()"/></div>
+        <div class="sf"><label>Wilayah</label>
+          <select id="f-wil" onchange="filter()">
+            <option value="">Semua</option><option>Barat</option><option>Pusat</option><option>Selatan</option><option>Timur</option><option>Utara</option>
+          </select>
+        </div>
+        <div class="sf"><label>Kamar Min</label>
+          <select id="f-kamar" onchange="filter()">
+            <option value="0">Semua</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="chips" id="worth-chips">
+      <button class="chip on" onclick="setWorth('',this)">⭐ Semua</button>
+      <button class="chip" onclick="setWorth('Worth-It',this)">✅ Worth It</button>
+      <button class="chip" onclick="setWorth('Not Worth-It',this)">❌ Not Worth It</button>
+    </div>
+    <div class="res-count"><b id="res-count">0</b> rumah ditemukan</div>
+    <div class="house-grid" id="house-grid"></div>
+    <div class="empty" id="empty" style="display:none"><div class="ei">🏚️</div><p>Tidak ada rumah yang sesuai filter.</p></div>
+  </div>
+</div>
+
+<!-- ADD -->
+<div id="pg-add" class="page">
+  <div class="wrap">
+    <div class="sec-label">Jual Properti</div>
+    <div class="sec-title">Tambahkan Rumah Baru</div>
+    <div class="form-card">
+      <div class="toast" id="add-toast"></div>
+      <div class="form-block">
+        <div class="form-block-title">📍 Lokasi</div>
+        <div class="form-grid">
+          <div class="ff"><label>Wilayah</label>
+            <select id="a-wil" onchange="fillKec('a-kec','a-wil')">
+              <option value="">Pilih</option><option>Barat</option><option>Pusat</option><option>Selatan</option><option>Timur</option><option>Utara</option>
+            </select>
+          </div>
+          <div class="ff"><label>Kecamatan</label><select id="a-kec"><option value="">Pilih Wilayah dulu</option></select></div>
+        </div>
+      </div>
+      <div class="form-block">
+        <div class="form-block-title">📐 Spesifikasi</div>
+        <div class="form-grid">
+          <div class="ff"><label>Luas Tanah (m²)</label><input type="number" id="a-tanah" placeholder="0" min="0"/></div>
+          <div class="ff"><label>Luas Bangunan (m²)</label><input type="number" id="a-ban" placeholder="0" min="0"/></div>
+          <div class="ff"><label>Jumlah Kamar</label><input type="number" id="a-kamar" placeholder="0" min="0"/></div>
+          <div class="ff"><label>Kamar Mandi</label><input type="number" id="a-km" placeholder="0" min="0"/></div>
+          <div class="ff"><label>Lantai</label><input type="number" id="a-lantai" placeholder="1" min="1"/></div>
+          <div class="ff"><label>Harga (Rupiah)</label><input type="text" id="a-harga" inputmode="numeric" placeholder="0"/></div>
+        </div>
+      </div>
+      <div class="form-block">
+        <div class="form-block-title">🏷️ Detail</div>
+        <div class="form-grid">
+          <div class="ff"><label>Arah Hadap</label>
+            <select id="a-arah"><option value="">Pilih</option><option>Utara</option><option>Selatan</option><option>Timur</option><option>Barat</option><option>Tenggara</option><option>Barat Daya</option><option>Timur Laut</option><option>Barat Laut</option></select>
+          </div>
+          <div class="ff"><label>Posisi Rumah</label>
+            <select id="a-posisi"><option value="">Pilih</option><option>Hook</option><option>Standard/Tengah</option><option>Tengah</option></select>
+          </div>
+          <div class="ff"><label>ROW Jalan (m)</label><input type="number" id="a-row" placeholder="0" min="0"/></div>
+        </div>
+      </div>
+      <div class="form-block">
+        <div class="form-block-title">⚡ Utilitas & Fasilitas Rumah</div>
+        <div class="form-grid" style="margin-bottom:16px">
+          <div class="ff-inline"><label>Carport (unit)</label><input type="number" id="a-carport" placeholder="1" min="0" value="1"/></div>
+          <div class="ff-inline"><label>Watt Listrik</label><input type="number" id="a-watt" placeholder="2200" min="0" value="2200"/></div>
+          <div class="ff"><label>Siap Huni</label>
+            <div class="yn-group" id="a-huni-grp">
+              <button class="yn-btn active-y" onclick="toggleYN('a-huni-grp','Y',this)">Ya</button>
+              <button class="yn-btn" onclick="toggleYN('a-huni-grp','N',this)">Tidak</button>
+            </div>
+          </div>
+          <div class="ff"><label>Furnished</label>
+            <div class="yn-group" id="a-furnish-grp">
+              <button class="yn-btn" onclick="toggleYN('a-furnish-grp','Y',this)">Ya</button>
+              <button class="yn-btn active-n" onclick="toggleYN('a-furnish-grp','N',this)">Tidak</button>
+            </div>
+          </div>
+        </div>
+        <div style="font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Fasilitas Sekitar</div>
+        <div class="fac-grid">
+          <div class="fac-item"><div class="fac-label"><span>🛒</span>Dekat Pasar</div><div class="yn-group" id="a-pasar-grp"><button class="yn-btn" onclick="toggleYN('a-pasar-grp','Y',this)">Ya</button><button class="yn-btn active-n" onclick="toggleYN('a-pasar-grp','N',this)">Tidak</button></div></div>
+          <div class="fac-item"><div class="fac-label"><span>🏫</span>Dekat Sekolah</div><div class="yn-group" id="a-skul-grp"><button class="yn-btn" onclick="toggleYN('a-skul-grp','Y',this)">Ya</button><button class="yn-btn active-n" onclick="toggleYN('a-skul-grp','N',this)">Tidak</button></div></div>
+          <div class="fac-item"><div class="fac-label"><span>🏥</span>Dekat Puskesmas/RS</div><div class="yn-group" id="a-rs-grp"><button class="yn-btn active-y" onclick="toggleYN('a-rs-grp','Y',this)">Ya</button><button class="yn-btn" onclick="toggleYN('a-rs-grp','N',this)">Tidak</button></div></div>
+          <div class="fac-item"><div class="fac-label"><span>🏬</span>Dekat Mall</div><div class="yn-group" id="a-mall-grp"><button class="yn-btn" onclick="toggleYN('a-mall-grp','Y',this)">Ya</button><button class="yn-btn active-n" onclick="toggleYN('a-mall-grp','N',this)">Tidak</button></div></div>
+          <div class="fac-item"><div class="fac-label"><span>🕌</span>Dekat Tempat Ibadah</div><div class="yn-group" id="a-ibadah-grp"><button class="yn-btn active-y" onclick="toggleYN('a-ibadah-grp','Y',this)">Ya</button><button class="yn-btn" onclick="toggleYN('a-ibadah-grp','N',this)">Tidak</button></div></div>
+          <div class="fac-item"><div class="fac-label"><span>🪦</span>Dekat Makam</div><div class="yn-group" id="a-makam-grp"><button class="yn-btn" onclick="toggleYN('a-makam-grp','Y',this)">Ya</button><button class="yn-btn active-n" onclick="toggleYN('a-makam-grp','N',this)">Tidak</button></div></div>
+          <div class="fac-item"><div class="fac-label"><span>🏊</span>Dekat Club House</div><div class="yn-group" id="a-club-grp"><button class="yn-btn" onclick="toggleYN('a-club-grp','Y',this)">Ya</button><button class="yn-btn active-n" onclick="toggleYN('a-club-grp','N',this)">Tidak</button></div></div>
+        </div>
+      </div>
+      <button class="form-submit" id="add-btn" onclick="addHouse()">🏠 Tambah & Klasifikasi dengan ML</button>
+    </div>
+  </div>
+</div>
+
+<!-- CHECK -->
+<div id="pg-check" class="page">
+  <div class="wrap">
+    <div class="sec-label">Analisis Model ML</div>
+    <div class="sec-title">Cek Worth It Rumah Kamu</div>
+    <div class="check-wrap">
+      <div class="form-card">
+        <div class="form-block">
+          <div class="form-block-title">📍 Lokasi</div>
+          <div class="form-grid">
+            <div class="ff"><label>Wilayah</label>
+              <select id="c-wil" onchange="fillKec('c-kec','c-wil')">
+                <option value="">Pilih</option><option>Barat</option><option>Pusat</option><option>Selatan</option><option>Timur</option><option>Utara</option>
+              </select>
+            </div>
+            <div class="ff"><label>Kecamatan</label><select id="c-kec"><option value="">Pilih Wilayah dulu</option></select></div>
+          </div>
+        </div>
+        <div class="form-block">
+          <div class="form-block-title">📐 Spesifikasi</div>
+          <div class="form-grid">
+            <div class="ff"><label>Luas Tanah (m²)</label><input type="number" id="c-tanah" placeholder="0" min="0"/></div>
+            <div class="ff"><label>Luas Bangunan (m²)</label><input type="number" id="c-ban" placeholder="0" min="0"/></div>
+            <div class="ff"><label>Jumlah Kamar</label><input type="number" id="c-kamar" placeholder="0" min="0"/></div>
+            <div class="ff"><label>Kamar Mandi</label><input type="number" id="c-km" placeholder="0" min="0"/></div>
+            <div class="ff"><label>Lantai</label><input type="number" id="c-lantai" placeholder="1" min="1"/></div>
+            <div class="ff"><label>Harga (Rupiah)</label><input type="text" id="c-harga" inputmode="numeric" placeholder="0"/></div>
+          </div>
+        </div>
+        <div class="form-block">
+          <div class="form-block-title">🏷️ Detail</div>
+          <div class="form-grid">
+            <div class="ff"><label>Arah Hadap</label>
+              <select id="c-arah"><option value="">Pilih</option><option>Utara</option><option>Selatan</option><option>Timur</option><option>Barat</option><option>Tenggara</option><option>Barat Daya</option><option>Timur Laut</option><option>Barat Laut</option></select>
+            </div>
+            <div class="ff"><label>Posisi Rumah</label>
+              <select id="c-posisi"><option value="">Pilih</option><option>Hook</option><option>Standard/Tengah</option><option>Tengah</option></select>
+            </div>
+            <div class="ff"><label>ROW Jalan (m)</label><input type="number" id="c-row" placeholder="0" min="0"/></div>
+          </div>
+        </div>
+        <div class="form-block">
+          <div class="form-block-title">⚡ Utilitas & Fasilitas Rumah</div>
+          <div class="form-grid" style="margin-bottom:16px">
+            <div class="ff-inline"><label>Carport (unit)</label><input type="number" id="c-carport" placeholder="1" min="0" value="1"/></div>
+            <div class="ff-inline"><label>Watt Listrik</label><input type="number" id="c-watt" placeholder="2200" min="0" value="2200"/></div>
+            <div class="ff"><label>Siap Huni</label>
+              <div class="yn-group" id="c-huni-grp">
+                <button class="yn-btn active-y" onclick="toggleYN('c-huni-grp','Y',this)">Ya</button>
+                <button class="yn-btn" onclick="toggleYN('c-huni-grp','N',this)">Tidak</button>
+              </div>
+            </div>
+            <div class="ff"><label>Furnished</label>
+              <div class="yn-group" id="c-furnish-grp">
+                <button class="yn-btn" onclick="toggleYN('c-furnish-grp','Y',this)">Ya</button>
+                <button class="yn-btn active-n" onclick="toggleYN('c-furnish-grp','N',this)">Tidak</button>
+              </div>
+            </div>
+          </div>
+          <div style="font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Fasilitas Sekitar</div>
+          <div class="fac-grid">
+            <div class="fac-item"><div class="fac-label"><span>🛒</span>Dekat Pasar</div><div class="yn-group" id="c-pasar-grp"><button class="yn-btn" onclick="toggleYN('c-pasar-grp','Y',this)">Ya</button><button class="yn-btn active-n" onclick="toggleYN('c-pasar-grp','N',this)">Tidak</button></div></div>
+            <div class="fac-item"><div class="fac-label"><span>🏫</span>Dekat Sekolah</div><div class="yn-group" id="c-skul-grp"><button class="yn-btn" onclick="toggleYN('c-skul-grp','Y',this)">Ya</button><button class="yn-btn active-n" onclick="toggleYN('c-skul-grp','N',this)">Tidak</button></div></div>
+            <div class="fac-item"><div class="fac-label"><span>🏥</span>Dekat Puskesmas/RS</div><div class="yn-group" id="c-rs-grp"><button class="yn-btn active-y" onclick="toggleYN('c-rs-grp','Y',this)">Ya</button><button class="yn-btn" onclick="toggleYN('c-rs-grp','N',this)">Tidak</button></div></div>
+            <div class="fac-item"><div class="fac-label"><span>🏬</span>Dekat Mall</div><div class="yn-group" id="c-mall-grp"><button class="yn-btn" onclick="toggleYN('c-mall-grp','Y',this)">Ya</button><button class="yn-btn active-n" onclick="toggleYN('c-mall-grp','N',this)">Tidak</button></div></div>
+            <div class="fac-item"><div class="fac-label"><span>🕌</span>Dekat Tempat Ibadah</div><div class="yn-group" id="c-ibadah-grp"><button class="yn-btn active-y" onclick="toggleYN('c-ibadah-grp','Y',this)">Ya</button><button class="yn-btn" onclick="toggleYN('c-ibadah-grp','N',this)">Tidak</button></div></div>
+            <div class="fac-item"><div class="fac-label"><span>🪦</span>Dekat Makam</div><div class="yn-group" id="c-makam-grp"><button class="yn-btn" onclick="toggleYN('c-makam-grp','Y',this)">Ya</button><button class="yn-btn active-n" onclick="toggleYN('c-makam-grp','N',this)">Tidak</button></div></div>
+            <div class="fac-item"><div class="fac-label"><span>🏊</span>Dekat Club House</div><div class="yn-group" id="c-club-grp"><button class="yn-btn" onclick="toggleYN('c-club-grp','Y',this)">Ya</button><button class="yn-btn active-n" onclick="toggleYN('c-club-grp','N',this)">Tidak</button></div></div>
+          </div>
+        </div>
+        <button class="form-submit" id="chk-btn" onclick="doCheck()">⚡ Analisis dengan Model ML</button>
+      </div>
+
+      <div class="result-pane">
+        <div id="res-idle">
+          <div class="idle-icon">🏡</div>
+          <div class="idle-txt">Isi form di sebelah kiri<br/>lalu klik <strong>"Analisis dengan Model ML"</strong><br/>untuk melihat hasilnya.</div>
+        </div>
+        <div id="res-loading" style="display:none">
+          <div class="idle-txt" style="font-weight:600;margin-bottom:4px">Model sedang menganalisis…</div>
+          <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+          <div class="idle-txt" style="font-size:12px;opacity:.7">Memproses fitur properti</div>
+        </div>
+        <div class="verdict" id="res-verdict" style="display:none">
+          <div class="model-chip">🌳 Decision Tree · best_model2.pkl</div>
+          <div class="verdict-icon" id="v-icon"></div>
+          <div class="verdict-label" id="v-label"></div>
+          <div class="verdict-badge" id="v-badge"></div>
+          <div class="prob-section">
+            <div class="prob-row"><div class="prob-lbl">Worth It</div><div class="prob-track"><div class="prob-fill w" id="pb-w" style="width:0%"></div></div><div class="prob-pct" id="pp-w">—</div></div>
+            <div class="prob-row"><div class="prob-lbl">Not Worth It</div><div class="prob-track"><div class="prob-fill n" id="pb-n" style="width:0%"></div></div><div class="prob-pct" id="pp-n">—</div></div>
+          </div>
+          <div class="info-note" id="v-info"></div>
+        </div>
+        <div id="res-error" style="display:none;width:100%"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const KECAMATAN = {
+  Barat:["Benowo","Dukuh Pakis","Karang Pilang","Lakarsantri","Pakal","Sambikerep","Sukomanunggal","Tandes","Wiyung"],
+  Pusat:["Genteng","Gubeng","Simokerto","Tambaksari","Tegalsari"],
+  Selatan:["Gayungan","Jambangan","Kepuhkiriman","Sawahan","Wonokromo"],
+  Timur:["Gunung Anyar","Mulyorejo","Rungkut","Sukolilo","Tenggilis Mejoyo"],
+  Utara:["Bulak","Kenjeran","Krembangan","Semampir"]
+};
+const FLASK = 'http://127.0.0.1:5001';
+
+let allHouses = [{"id": 1, "wilayah": "Timur", "kecamatan": "Rungkut", "tanah": "100", "bangunan": "60", "kamar": "2", "harga": 650, "worthIt": "Worth-It"}, {"id": 2, "wilayah": "Timur", "kecamatan": "Gunung Anyar", "tanah": "50", "bangunan": "35", "kamar": "2", "harga": 525, "worthIt": "Not Worth-It"}, {"id": 3, "wilayah": "Timur", "kecamatan": "Rungkut", "tanah": "65", "bangunan": "65", "kamar": "2", "harga": 625, "worthIt": "Not Worth-It"}, {"id": 4, "wilayah": "Barat", "kecamatan": "Dukuh Pakis", "tanah": "460", "bangunan": "350", "kamar": "5", "harga": 17000, "worthIt": "Not Worth-It"}, {"id": 5, "wilayah": "Timur", "kecamatan": "Rungkut", "tanah": "100", "bangunan": "120", "kamar": "3", "harga": 1100, "worthIt": "Worth-It"}, {"id": 6, "wilayah": "Utara", "kecamatan": "Semampir", "tanah": "300", "bangunan": "200", "kamar": "3", "harga": 1600, "worthIt": "Worth-It"}, {"id": 7, "wilayah": "Timur", "kecamatan": "Gunung Anyar", "tanah": "70", "bangunan": "50", "kamar": "2", "harga": 750, "worthIt": "Worth-It"}, {"id": 8, "wilayah": "Timur", "kecamatan": "Gunung Anyar", "tanah": "50", "bangunan": "70", "kamar": "3", "harga": 625, "worthIt": "Worth-It"}, {"id": 9, "wilayah": "Timur", "kecamatan": "Rungkut", "tanah": "100", "bangunan": "70", "kamar": "3", "harga": 875, "worthIt": "Worth-It"}, {"id": 10, "wilayah": "Selatan", "kecamatan": "Jambangan", "tanah": "120", "bangunan": "90", "kamar": "3", "harga": 1650, "worthIt": "Worth-It"}, {"id": 11, "wilayah": "Selatan", "kecamatan": "Gayungan", "tanah": "136", "bangunan": "150", "kamar": "2", "harga": 2790, "worthIt": "Not Worth-It"}, {"id": 12, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "120", "bangunan": "100", "kamar": "4", "harga": 1650, "worthIt": "Worth-It"}, {"id": 13, "wilayah": "Timur", "kecamatan": "Rungkut", "tanah": "48", "bangunan": "45", "kamar": "2", "harga": 565, "worthIt": "Worth-It"}, {"id": 14, "wilayah": "Selatan", "kecamatan": "Tambakcemandi", "tanah": "72", "bangunan": "85", "kamar": "3", "harga": 750, "worthIt": "Worth-It"}, {"id": 15, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "90", "bangunan": "180", "kamar": "4", "harga": 1450, "worthIt": "Worth-It"}, {"id": 16, "wilayah": "Timur", "kecamatan": "Tenggilis Mejoyo", "tanah": "78", "bangunan": "120", "kamar": "4", "harga": 1890, "worthIt": "Not Worth-It"}, {"id": 17, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "230", "bangunan": "400", "kamar": "25", "harga": 3500, "worthIt": "Worth-It"}, {"id": 18, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "45", "bangunan": "70", "kamar": "2", "harga": 925, "worthIt": "Not Worth-It"}, {"id": 19, "wilayah": "Selatan", "kecamatan": "Wonokromo", "tanah": "60", "bangunan": "100", "kamar": "3", "harga": 599, "worthIt": "Worth-It"}, {"id": 20, "wilayah": "Selatan", "kecamatan": "Kepuhkiriman", "tanah": "78", "bangunan": "120", "kamar": "3", "harga": 795, "worthIt": "Worth-It"}, {"id": 21, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "80", "bangunan": "60", "kamar": "10", "harga": 2550, "worthIt": "Not Worth-It"}, {"id": 22, "wilayah": "Pusat", "kecamatan": "Genteng", "tanah": "110", "bangunan": "110", "kamar": "4", "harga": 1800, "worthIt": "Not Worth-It"}, {"id": 23, "wilayah": "Pusat", "kecamatan": "Genteng", "tanah": "92", "bangunan": "65", "kamar": "2", "harga": 875, "worthIt": "Worth-It"}, {"id": 24, "wilayah": "Pusat", "kecamatan": "Genteng", "tanah": "125", "bangunan": "147", "kamar": "4", "harga": 1800, "worthIt": "Worth-It"}, {"id": 25, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "140", "bangunan": "218", "kamar": "5", "harga": 3800, "worthIt": "Not Worth-It"}, {"id": 26, "wilayah": "Utara", "kecamatan": "Bulak", "tanah": "90", "bangunan": "135", "kamar": "5", "harga": 1950, "worthIt": "Not Worth-It"}, {"id": 27, "wilayah": "Timur", "kecamatan": "Tenggilis Mejoyo", "tanah": "56", "bangunan": "111", "kamar": "8", "harga": 600, "worthIt": "Worth-It"}, {"id": 28, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "140", "bangunan": "218", "kamar": "5", "harga": 3800, "worthIt": "Not Worth-It"}, {"id": 29, "wilayah": "Selatan", "kecamatan": "Sawahan", "tanah": "100", "bangunan": "200", "kamar": "3", "harga": 3900, "worthIt": "Not Worth-It"}, {"id": 30, "wilayah": "Pusat", "kecamatan": "Genteng", "tanah": "160", "bangunan": "94", "kamar": "5", "harga": 1750, "worthIt": "Worth-It"}, {"id": 31, "wilayah": "Utara", "kecamatan": "Kenjeran", "tanah": "102", "bangunan": "101", "kamar": "4", "harga": 1699, "worthIt": "Worth-It"}, {"id": 32, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "72", "bangunan": "97", "kamar": "3", "harga": 2500, "worthIt": "Not Worth-It"}, {"id": 33, "wilayah": "Pusat", "kecamatan": "Genteng", "tanah": "128", "bangunan": "295", "kamar": "5", "harga": 4750, "worthIt": "Not Worth-It"}, {"id": 34, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "464", "bangunan": "400", "kamar": "4", "harga": 7000, "worthIt": "Worth-It"}, {"id": 35, "wilayah": "Barat", "kecamatan": "Tandes", "tanah": "144", "bangunan": "268", "kamar": "4", "harga": 5800, "worthIt": "Not Worth-It"}, {"id": 36, "wilayah": "Barat", "kecamatan": "Pakal", "tanah": "103", "bangunan": "150", "kamar": "4", "harga": 1100, "worthIt": "Worth-It"}, {"id": 37, "wilayah": "Barat", "kecamatan": "Wiyung", "tanah": "240", "bangunan": "270", "kamar": "4", "harga": 3500, "worthIt": "Worth-It"}, {"id": 38, "wilayah": "Barat", "kecamatan": "Sukomanunggal", "tanah": "225", "bangunan": "15", "kamar": "4", "harga": 3500, "worthIt": "Not Worth-It"}, {"id": 39, "wilayah": "Barat", "kecamatan": "Tandes", "tanah": "97", "bangunan": "72", "kamar": "3", "harga": 610, "worthIt": "Worth-It"}, {"id": 40, "wilayah": "Barat", "kecamatan": "Dukuh Pakis", "tanah": "105", "bangunan": "189", "kamar": "2", "harga": 2100, "worthIt": "Worth-It"}, {"id": 41, "wilayah": "Barat", "kecamatan": "Benowo", "tanah": "78", "bangunan": "42", "kamar": "2", "harga": 425, "worthIt": "Not Worth-It"}, {"id": 42, "wilayah": "Barat", "kecamatan": "Wiyung", "tanah": "96", "bangunan": "156", "kamar": "3", "harga": 2600, "worthIt": "Not Worth-It"}, {"id": 43, "wilayah": "Barat", "kecamatan": "Wiyung", "tanah": "190", "bangunan": "175", "kamar": "4", "harga": 2100, "worthIt": "Worth-It"}, {"id": 44, "wilayah": "Barat", "kecamatan": "Lakarsantri", "tanah": "139", "bangunan": "94", "kamar": "3", "harga": 1200, "worthIt": "Worth-It"}, {"id": 45, "wilayah": "Barat", "kecamatan": "Tandes", "tanah": "72", "bangunan": "80", "kamar": "2", "harga": 900, "worthIt": "Worth-It"}, {"id": 46, "wilayah": "Barat", "kecamatan": "Pakal", "tanah": "72", "bangunan": "100", "kamar": "3", "harga": 710, "worthIt": "Worth-It"}, {"id": 47, "wilayah": "Barat", "kecamatan": "Benowo", "tanah": "90", "bangunan": "45", "kamar": "2", "harga": 650, "worthIt": "Not Worth-It"}, {"id": 48, "wilayah": "Barat", "kecamatan": "Sambikerep", "tanah": "80", "bangunan": "70", "kamar": "4", "harga": 1200, "worthIt": "Worth-It"}, {"id": 49, "wilayah": "Barat", "kecamatan": "Wiyung", "tanah": "175", "bangunan": "270", "kamar": "4", "harga": 3200, "worthIt": "Worth-It"}, {"id": 50, "wilayah": "Barat", "kecamatan": "Wiyung", "tanah": "240", "bangunan": "300", "kamar": "5", "harga": 3400, "worthIt": "Worth-It"}, {"id": 51, "wilayah": "Barat", "kecamatan": "Karangpilang", "tanah": "120", "bangunan": "240", "kamar": "9", "harga": 900, "worthIt": "Worth-It"}, {"id": 52, "wilayah": "Barat", "kecamatan": "Wiyung", "tanah": "105", "bangunan": "200", "kamar": "3", "harga": 1700, "worthIt": "Worth-It"}, {"id": 53, "wilayah": "Barat", "kecamatan": "Wiyung", "tanah": "135", "bangunan": "117", "kamar": "4", "harga": 1500, "worthIt": "Worth-It"}, {"id": 54, "wilayah": "Barat", "kecamatan": "Lakarsantri", "tanah": "90", "bangunan": "60", "kamar": "2", "harga": 1100, "worthIt": "Worth-It"}, {"id": 55, "wilayah": "Barat", "kecamatan": "Karangpilang", "tanah": "105", "bangunan": "140", "kamar": "4", "harga": 960, "worthIt": "Worth-It"}, {"id": 56, "wilayah": "Barat", "kecamatan": "Lakarsantri", "tanah": "126", "bangunan": "140", "kamar": "3", "harga": 1400, "worthIt": "Worth-It"}, {"id": 57, "wilayah": "Barat", "kecamatan": "Dukuh Pakis", "tanah": "1016", "bangunan": "1000", "kamar": "6", "harga": 18500, "worthIt": "Worth-It"}, {"id": 58, "wilayah": "Barat", "kecamatan": "Sambikerep", "tanah": "300", "bangunan": "500", "kamar": "5", "harga": 10500, "worthIt": "Not Worth-It"}, {"id": 59, "wilayah": "Barat", "kecamatan": "Sukomanunggal", "tanah": "225", "bangunan": "162", "kamar": "4", "harga": 2700, "worthIt": "Worth-It"}, {"id": 60, "wilayah": "Barat", "kecamatan": "Dukuh Pakis", "tanah": "99", "bangunan": "110", "kamar": "3", "harga": 1300, "worthIt": "Worth-It"}, {"id": 61, "wilayah": "Barat", "kecamatan": "Pakal", "tanah": "120", "bangunan": "150", "kamar": "3", "harga": 1700, "worthIt": "Worth-It"}, {"id": 62, "wilayah": "Barat", "kecamatan": "Lakarsantri", "tanah": "105", "bangunan": "120", "kamar": "2", "harga": 950, "worthIt": "Worth-It"}, {"id": 63, "wilayah": "Barat", "kecamatan": "Wiyung", "tanah": "90", "bangunan": "180", "kamar": "2", "harga": 1100, "worthIt": "Worth-It"}, {"id": 64, "wilayah": "Barat", "kecamatan": "Pakal", "tanah": "72", "bangunan": "36", "kamar": "3", "harga": 710, "worthIt": "Worth-It"}, {"id": 65, "wilayah": "Barat", "kecamatan": "Pakal", "tanah": "72", "bangunan": "90", "kamar": "2", "harga": 385, "worthIt": "Not Worth-It"}, {"id": 66, "wilayah": "Barat", "kecamatan": "Wiyung", "tanah": "101", "bangunan": "90", "kamar": "4", "harga": 1300, "worthIt": "Worth-It"}, {"id": 67, "wilayah": "Barat", "kecamatan": "Lakarsantri", "tanah": "930", "bangunan": "790", "kamar": "4", "harga": 22000, "worthIt": "Not Worth-It"}, {"id": 68, "wilayah": "Barat", "kecamatan": "Lakarsantri", "tanah": "240", "bangunan": "76", "kamar": "4", "harga": 2600, "worthIt": "Worth-It"}, {"id": 69, "wilayah": "Barat", "kecamatan": "Sambikerep", "tanah": "290", "bangunan": "136", "kamar": "4", "harga": 3500, "worthIt": "Worth-It"}, {"id": 70, "wilayah": "Selatan", "kecamatan": "Jambangan", "tanah": "120", "bangunan": "170", "kamar": "4", "harga": 2150, "worthIt": "Not Worth-It"}, {"id": 71, "wilayah": "Barat", "kecamatan": "Dukuh Pakis", "tanah": "840", "bangunan": "785", "kamar": "4", "harga": 32000, "worthIt": "Not Worth-It"}, {"id": 72, "wilayah": "Barat", "kecamatan": "Wiyung", "tanah": "345", "bangunan": "600", "kamar": "5", "harga": 16000, "worthIt": "Not Worth-It"}, {"id": 73, "wilayah": "Utara", "kecamatan": "Semampir", "tanah": "100", "bangunan": "150", "kamar": "4", "harga": 1350, "worthIt": "Worth-It"}, {"id": 74, "wilayah": "Timur", "kecamatan": "Rungkut", "tanah": "168", "bangunan": "150", "kamar": "3", "harga": 2500, "worthIt": "Worth-It"}, {"id": 75, "wilayah": "Pusat", "kecamatan": "Gubeng", "tanah": "395", "bangunan": "300", "kamar": "4", "harga": 2700, "worthIt": "Worth-It"}, {"id": 76, "wilayah": "Selatan", "kecamatan": "Gayungan", "tanah": "600", "bangunan": "300", "kamar": "4", "harga": 10000, "worthIt": "Not Worth-It"}, {"id": 77, "wilayah": "Barat", "kecamatan": "Sambikerep", "tanah": "302", "bangunan": "450", "kamar": "5", "harga": 5500, "worthIt": "Worth-It"}, {"id": 78, "wilayah": "Pusat", "kecamatan": "Gubeng", "tanah": "160", "bangunan": "200", "kamar": "2", "harga": 700, "worthIt": "Worth-It"}, {"id": 79, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "300", "bangunan": "410", "kamar": "5", "harga": 8000, "worthIt": "Not Worth-It"}, {"id": 80, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "280", "bangunan": "350", "kamar": "4", "harga": 4500, "worthIt": "Worth-It"}, {"id": 81, "wilayah": "Timur", "kecamatan": "Rungkut", "tanah": "200", "bangunan": "300", "kamar": "10", "harga": 1750, "worthIt": "Worth-It"}, {"id": 82, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "375", "bangunan": "490", "kamar": "5", "harga": 7500, "worthIt": "Worth-It"}, {"id": 83, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "158", "bangunan": "178", "kamar": "4", "harga": 5000, "worthIt": "Not Worth-It"}, {"id": 84, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "450", "bangunan": "480", "kamar": "4", "harga": 10000, "worthIt": "Not Worth-It"}, {"id": 85, "wilayah": "Barat", "kecamatan": "Wiyung", "tanah": "756", "bangunan": "564", "kamar": "5", "harga": 17000, "worthIt": "Not Worth-It"}, {"id": 86, "wilayah": "Selatan", "kecamatan": "Wonokromo", "tanah": "1384", "bangunan": "426", "kamar": "3", "harga": 110000, "worthIt": "Not Worth-It"}, {"id": 87, "wilayah": "Pusat", "kecamatan": "Tambaksari", "tanah": "200", "bangunan": "200", "kamar": "4", "harga": 2750, "worthIt": "Not Worth-It"}, {"id": 88, "wilayah": "Pusat", "kecamatan": "Tegalsari", "tanah": "830", "bangunan": "400", "kamar": "5", "harga": 49000, "worthIt": "Not Worth-It"}, {"id": 89, "wilayah": "Barat", "kecamatan": "Lakarsantri", "tanah": "288", "bangunan": "180", "kamar": "3", "harga": 5200, "worthIt": "Not Worth-It"}, {"id": 90, "wilayah": "Pusat", "kecamatan": "Gubeng", "tanah": "150", "bangunan": "200", "kamar": "4", "harga": 2500, "worthIt": "Worth-It"}, {"id": 91, "wilayah": "Pusat", "kecamatan": "Gubeng", "tanah": "128", "bangunan": "180", "kamar": "4", "harga": 2500, "worthIt": "Not Worth-It"}, {"id": 92, "wilayah": "Barat", "kecamatan": "Sambikerep", "tanah": "1883", "bangunan": "2500", "kamar": "24", "harga": 14000, "worthIt": "Worth-It"}, {"id": 93, "wilayah": "Barat", "kecamatan": "Dukuh Pakis", "tanah": "706", "bangunan": "800", "kamar": "4", "harga": 30000, "worthIt": "Not Worth-It"}, {"id": 94, "wilayah": "Barat", "kecamatan": "Pakal", "tanah": "100", "bangunan": "120", "kamar": "4", "harga": 2100, "worthIt": "Worth-It"}, {"id": 95, "wilayah": "Selatan", "kecamatan": "Wonokromo", "tanah": "728", "bangunan": "1000", "kamar": "5", "harga": 23500, "worthIt": "Not Worth-It"}, {"id": 96, "wilayah": "Selatan", "kecamatan": "Gayungan", "tanah": "159", "bangunan": "180", "kamar": "3", "harga": 929, "worthIt": "Worth-It"}, {"id": 97, "wilayah": "Pusat", "kecamatan": "Simokerto", "tanah": "128", "bangunan": "170", "kamar": "3", "harga": 1200, "worthIt": "Worth-It"}, {"id": 98, "wilayah": "Pusat", "kecamatan": "Tegalsari", "tanah": "1383", "bangunan": "1276", "kamar": "4", "harga": 37500, "worthIt": "Not Worth-It"}, {"id": 99, "wilayah": "Selatan", "kecamatan": "Jambangan", "tanah": "120", "bangunan": "134", "kamar": "3", "harga": 1850, "worthIt": "Not Worth-It"}, {"id": 100, "wilayah": "Barat", "kecamatan": "Lakarsantri", "tanah": "240", "bangunan": "350", "kamar": "4", "harga": 5700, "worthIt": "Not Worth-It"}, {"id": 101, "wilayah": "Pusat", "kecamatan": "Tegalsari", "tanah": "959", "bangunan": "1200", "kamar": "9", "harga": 56000, "worthIt": "Not Worth-It"}, {"id": 102, "wilayah": "Timur", "kecamatan": "Tenggilis Mejoyo", "tanah": "670", "bangunan": "850", "kamar": "5", "harga": 9200, "worthIt": "Not Worth-It"}, {"id": 103, "wilayah": "Barat", "kecamatan": "Lakarsantri", "tanah": "210", "bangunan": "310", "kamar": "5", "harga": 6200, "worthIt": "Not Worth-It"}, {"id": 104, "wilayah": "Selatan", "kecamatan": "Sawahan", "tanah": "849", "bangunan": "500", "kamar": "5", "harga": 13000, "worthIt": "Worth-It"}, {"id": 105, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "449", "bangunan": "400", "kamar": "4", "harga": 5800, "worthIt": "Worth-It"}, {"id": 106, "wilayah": "Barat", "kecamatan": "Sambikerep", "tanah": "375", "bangunan": "550", "kamar": "4", "harga": 8500, "worthIt": "Not Worth-It"}, {"id": 107, "wilayah": "Selatan", "kecamatan": "Wonokromo", "tanah": "1080", "bangunan": "1500", "kamar": "6", "harga": 30000, "worthIt": "Not Worth-It"}, {"id": 108, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "330", "bangunan": "482", "kamar": "5", "harga": 6500, "worthIt": "Worth-It"}, {"id": 109, "wilayah": "Timur", "kecamatan": "Tenggilis Mejoyo", "tanah": "525", "bangunan": "400", "kamar": "6", "harga": 9500, "worthIt": "Worth-It"}, {"id": 110, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "480", "bangunan": "400", "kamar": "3", "harga": 6500, "worthIt": "Worth-It"}, {"id": 111, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "646", "bangunan": "350", "kamar": "4", "harga": 6500, "worthIt": "Worth-It"}, {"id": 112, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "517", "bangunan": "450", "kamar": "5", "harga": 8900, "worthIt": "Worth-It"}, {"id": 113, "wilayah": "Pusat", "kecamatan": "Genteng", "tanah": "629", "bangunan": "546", "kamar": "4", "harga": 12500, "worthIt": "Not Worth-It"}, {"id": 114, "wilayah": "Barat", "kecamatan": "Lakarsantri", "tanah": "235", "bangunan": "234", "kamar": "4", "harga": 4800, "worthIt": "Not Worth-It"}, {"id": 115, "wilayah": "Selatan", "kecamatan": "Gayungan", "tanah": "112", "bangunan": "183", "kamar": "4", "harga": 2350, "worthIt": "Not Worth-It"}, {"id": 116, "wilayah": "Barat", "kecamatan": "Sambikerep", "tanah": "480", "bangunan": "550", "kamar": "8", "harga": 18000, "worthIt": "Not Worth-It"}, {"id": 117, "wilayah": "Utara", "kecamatan": "Kenjeran", "tanah": "280", "bangunan": "400", "kamar": "3", "harga": 550, "worthIt": "Worth-It"}, {"id": 118, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "350", "bangunan": "420", "kamar": "6", "harga": 6530, "worthIt": "Not Worth-It"}, {"id": 119, "wilayah": "Selatan", "kecamatan": "Gayungan", "tanah": "120", "bangunan": "85", "kamar": "2", "harga": 2980, "worthIt": "Not Worth-It"}, {"id": 120, "wilayah": "Barat", "kecamatan": "Lakarsantri", "tanah": "200", "bangunan": "310", "kamar": "3", "harga": 3900, "worthIt": "Not Worth-It"}, {"id": 121, "wilayah": "Selatan", "kecamatan": "Jambangan", "tanah": "90", "bangunan": "145", "kamar": "3", "harga": 1900, "worthIt": "Not Worth-It"}, {"id": 122, "wilayah": "Timur", "kecamatan": "Tenggilis Mejoyo", "tanah": "4480", "bangunan": "1039", "kamar": "25", "harga": 7200, "worthIt": "Worth-It"}, {"id": 123, "wilayah": "Pusat", "kecamatan": "Gubeng", "tanah": "300", "bangunan": "220", "kamar": "4", "harga": 3060, "worthIt": "Worth-It"}, {"id": 124, "wilayah": "Barat", "kecamatan": "Sukomanunggal", "tanah": "1050", "bangunan": "968", "kamar": "5", "harga": 18900, "worthIt": "Worth-It"}, {"id": 125, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "300", "bangunan": "460", "kamar": "5", "harga": 4280, "worthIt": "Worth-It"}, {"id": 126, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "336", "bangunan": "500", "kamar": "5", "harga": 6030, "worthIt": "Worth-It"}, {"id": 127, "wilayah": "Pusat", "kecamatan": "Gubeng", "tanah": "152", "bangunan": "120", "kamar": "4", "harga": 1330, "worthIt": "Worth-It"}, {"id": 128, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "150", "bangunan": "230", "kamar": "4", "harga": 4050, "worthIt": "Not Worth-It"}, {"id": 129, "wilayah": "Timur", "kecamatan": "Rungkut", "tanah": "203", "bangunan": "300", "kamar": "3", "harga": 2250, "worthIt": "Worth-It"}, {"id": 130, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "540", "bangunan": "520", "kamar": "4", "harga": 7470, "worthIt": "Worth-It"}, {"id": 131, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "375", "bangunan": "300", "kamar": "3", "harga": 5850, "worthIt": "Worth-It"}, {"id": 132, "wilayah": "Pusat", "kecamatan": "Gubeng", "tanah": "135", "bangunan": "105", "kamar": "2", "harga": 2500, "worthIt": "Not Worth-It"}, {"id": 133, "wilayah": "Pusat", "kecamatan": "Gubeng", "tanah": "160", "bangunan": "200", "kamar": "4", "harga": 2250, "worthIt": "Worth-It"}, {"id": 134, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "189", "bangunan": "300", "kamar": "4", "harga": 4850, "worthIt": "Not Worth-It"}, {"id": 135, "wilayah": "Barat", "kecamatan": "Wiyung", "tanah": "147", "bangunan": "455", "kamar": "30", "harga": 4900, "worthIt": "Not Worth-It"}, {"id": 136, "wilayah": "Barat", "kecamatan": "Wiyung", "tanah": "168", "bangunan": "336", "kamar": "22", "harga": 4500, "worthIt": "Not Worth-It"}, {"id": 137, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "340", "bangunan": "450", "kamar": "6", "harga": 9100, "worthIt": "Not Worth-It"}, {"id": 138, "wilayah": "Timur", "kecamatan": "Rungkut", "tanah": "65", "bangunan": "30", "kamar": "2", "harga": 595, "worthIt": "Not Worth-It"}, {"id": 139, "wilayah": "Barat", "kecamatan": "Wiyung", "tanah": "147", "bangunan": "440", "kamar": "9", "harga": 4900, "worthIt": "Not Worth-It"}, {"id": 140, "wilayah": "Utara", "kecamatan": "Kenjeran", "tanah": "120", "bangunan": "150", "kamar": "5", "harga": 2600, "worthIt": "Not Worth-It"}, {"id": 141, "wilayah": "Timur", "kecamatan": "Rungkut", "tanah": "120", "bangunan": "225", "kamar": "4", "harga": 2600, "worthIt": "Worth-It"}, {"id": 142, "wilayah": "Timur", "kecamatan": "Rungkut", "tanah": "105", "bangunan": "180", "kamar": "4", "harga": 1950, "worthIt": "Not Worth-It"}, {"id": 143, "wilayah": "Timur", "kecamatan": "Rungkut", "tanah": "48", "bangunan": "45", "kamar": "2", "harga": 565000, "worthIt": "Not Worth-It"}, {"id": 144, "wilayah": "Timur", "kecamatan": "Tenggilis Mejoyo", "tanah": "189", "bangunan": "180", "kamar": "2", "harga": 1800, "worthIt": "Worth-It"}, {"id": 145, "wilayah": "Barat", "kecamatan": "Sambikerep", "tanah": "162", "bangunan": "149", "kamar": "3", "harga": 2500, "worthIt": "Worth-It"}, {"id": 146, "wilayah": "Selatan", "kecamatan": "Gayungan", "tanah": "56", "bangunan": "85", "kamar": "3", "harga": 1470, "worthIt": "Not Worth-It"}, {"id": 147, "wilayah": "Barat", "kecamatan": "Lakarsantri", "tanah": "200", "bangunan": "250", "kamar": "4", "harga": 2940, "worthIt": "Worth-It"}, {"id": 148, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "120", "bangunan": "160", "kamar": "5", "harga": 2850, "worthIt": "Not Worth-It"}, {"id": 149, "wilayah": "Utara", "kecamatan": "Semampir", "tanah": "90", "bangunan": "180", "kamar": "4", "harga": 1450, "worthIt": "Not Worth-It"}, {"id": 150, "wilayah": "Utara", "kecamatan": "Kenjeran", "tanah": "135", "bangunan": "210", "kamar": "5", "harga": 3200, "worthIt": "Not Worth-It"}, {"id": 151, "wilayah": "Barat", "kecamatan": "Lakarsantri", "tanah": "240", "bangunan": "567", "kamar": "2", "harga": 8990, "worthIt": "Not Worth-It"}, {"id": 152, "wilayah": "Barat", "kecamatan": "Karang Pilang", "tanah": "205", "bangunan": "180", "kamar": "3", "harga": 1200, "worthIt": "Worth-It"}, {"id": 153, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "1200", "bangunan": "1300", "kamar": "23", "harga": 38500, "worthIt": "Not Worth-It"}, {"id": 154, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "136", "bangunan": "195", "kamar": "5", "harga": 3350, "worthIt": "Not Worth-It"}, {"id": 155, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "135", "bangunan": "170", "kamar": "5", "harga": 2800, "worthIt": "Not Worth-It"}, {"id": 156, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "200", "bangunan": "300", "kamar": "5", "harga": 5000, "worthIt": "Not Worth-It"}, {"id": 157, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "156", "bangunan": "250", "kamar": "4", "harga": 2000, "worthIt": "Worth-It"}, {"id": 158, "wilayah": "Barat", "kecamatan": "Wiyung", "tanah": "182", "bangunan": "305", "kamar": "4", "harga": 8000, "worthIt": "Not Worth-It"}, {"id": 159, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "764", "bangunan": "800", "kamar": "7", "harga": 25000, "worthIt": "Not Worth-It"}, {"id": 160, "wilayah": "Barat", "kecamatan": "Karang Pilang", "tanah": "160", "bangunan": "310", "kamar": "17", "harga": 2850, "worthIt": "Worth-It"}, {"id": 161, "wilayah": "Pusat", "kecamatan": "Genteng", "tanah": "95", "bangunan": "120", "kamar": "4", "harga": 1750, "worthIt": "Not Worth-It"}, {"id": 162, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "340", "bangunan": "450", "kamar": "6", "harga": 9100, "worthIt": "Not Worth-It"}, {"id": 163, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "150", "bangunan": "350", "kamar": "9", "harga": 5250, "worthIt": "Not Worth-It"}, {"id": 164, "wilayah": "Selatan", "kecamatan": "Jambangan", "tanah": "344", "bangunan": "619", "kamar": "5", "harga": 4990, "worthIt": "Worth-It"}, {"id": 165, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "91", "bangunan": "135", "kamar": "2", "harga": 2700, "worthIt": "Not Worth-It"}, {"id": 166, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "324", "bangunan": "411", "kamar": "5", "harga": 12500, "worthIt": "Not Worth-It"}, {"id": 167, "wilayah": "Pusat", "kecamatan": "Tambaksari", "tanah": "360", "bangunan": "200", "kamar": "4", "harga": 2400, "worthIt": "Worth-It"}, {"id": 168, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "125", "bangunan": "115", "kamar": "10", "harga": 4300, "worthIt": "Not Worth-It"}, {"id": 169, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "138", "bangunan": "150", "kamar": "5", "harga": 2350, "worthIt": "Worth-It"}, {"id": 170, "wilayah": "Selatan", "kecamatan": "Gayungan", "tanah": "360", "bangunan": "430", "kamar": "6", "harga": 3800, "worthIt": "Worth-It"}, {"id": 171, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "245", "bangunan": "800", "kamar": "52", "harga": 10500, "worthIt": "Not Worth-It"}, {"id": 172, "wilayah": "Timur", "kecamatan": "Rungkut", "tanah": "100", "bangunan": "65", "kamar": "3", "harga": 599000, "worthIt": "Not Worth-It"}, {"id": 173, "wilayah": "Timur", "kecamatan": "Rungkut", "tanah": "180", "bangunan": "155", "kamar": "3", "harga": 1650, "worthIt": "Worth-It"}, {"id": 174, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "135", "bangunan": "126", "kamar": "3", "harga": 1750, "worthIt": "Worth-It"}, {"id": 175, "wilayah": "Selatan", "kecamatan": "Gayungan", "tanah": "320", "bangunan": "320", "kamar": "6", "harga": 3250, "worthIt": "Worth-It"}, {"id": 176, "wilayah": "Barat", "kecamatan": "Sukomanunggal", "tanah": "203", "bangunan": "210", "kamar": "5", "harga": 2340, "worthIt": "Worth-It"}, {"id": 177, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "78", "bangunan": "118", "kamar": "3", "harga": 1850, "worthIt": "Not Worth-It"}, {"id": 178, "wilayah": "Selatan", "kecamatan": "Wonokromo", "tanah": "533", "bangunan": "150", "kamar": "2", "harga": 7500, "worthIt": "Worth-It"}, {"id": 179, "wilayah": "Barat", "kecamatan": "Dukuh Pakis", "tanah": "250", "bangunan": "250", "kamar": "4", "harga": 1990, "worthIt": "Worth-It"}, {"id": 180, "wilayah": "Timur", "kecamatan": "Gunung Anyar", "tanah": "200", "bangunan": "70", "kamar": "3", "harga": 1000, "worthIt": "Worth-It"}, {"id": 181, "wilayah": "Barat", "kecamatan": "Dukuh Pakis", "tanah": "100", "bangunan": "95", "kamar": "3", "harga": 800000, "worthIt": "Not Worth-It"}, {"id": 182, "wilayah": "Barat", "kecamatan": "Dukuh Pakis", "tanah": "336", "bangunan": "396", "kamar": "4", "harga": 15000, "worthIt": "Not Worth-It"}, {"id": 183, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "125", "bangunan": "115", "kamar": "10", "harga": 4300, "worthIt": "Not Worth-It"}, {"id": 184, "wilayah": "Barat", "kecamatan": "Wiyung", "tanah": "158", "bangunan": "250", "kamar": "10", "harga": 1800, "worthIt": "Worth-It"}, {"id": 185, "wilayah": "Timur", "kecamatan": "Rungkut", "tanah": "90", "bangunan": "70", "kamar": "2", "harga": 975000, "worthIt": "Not Worth-It"}, {"id": 186, "wilayah": "Selatan", "kecamatan": "Gayungan", "tanah": "150", "bangunan": "176", "kamar": "5", "harga": 2400, "worthIt": "Not Worth-It"}, {"id": 187, "wilayah": "Timur", "kecamatan": "Gunung Anyar", "tanah": "97", "bangunan": "140", "kamar": "3", "harga": 925000, "worthIt": "Not Worth-It"}, {"id": 188, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "78", "bangunan": "118", "kamar": "4", "harga": 1850, "worthIt": "Not Worth-It"}, {"id": 189, "wilayah": "Utara", "kecamatan": "Krembangan", "tanah": "145", "bangunan": "145", "kamar": "3", "harga": 600000, "worthIt": "Not Worth-It"}, {"id": 190, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "150", "bangunan": "450", "kamar": "10", "harga": 4800, "worthIt": "Not Worth-It"}, {"id": 191, "wilayah": "Selatan", "kecamatan": "Jambangan", "tanah": "256", "bangunan": "450", "kamar": "5", "harga": 2900, "worthIt": "Worth-It"}, {"id": 192, "wilayah": "Barat", "kecamatan": "Pakal", "tanah": "94", "bangunan": "150", "kamar": "3", "harga": 1300, "worthIt": "Worth-It"}, {"id": 193, "wilayah": "Pusat", "kecamatan": "Tambaksari", "tanah": "360", "bangunan": "200", "kamar": "4", "harga": 2560, "worthIt": "Worth-It"}, {"id": 194, "wilayah": "Barat", "kecamatan": "Sambikerep", "tanah": "60", "bangunan": "90", "kamar": "2", "harga": 1000, "worthIt": "Not Worth-It"}, {"id": 195, "wilayah": "Utara", "kecamatan": "Krembangan", "tanah": "72", "bangunan": "36", "kamar": "2", "harga": 415000, "worthIt": "Not Worth-It"}, {"id": 196, "wilayah": "Selatan", "kecamatan": "Gayungan", "tanah": "275", "bangunan": "300", "kamar": "4", "harga": 2600, "worthIt": "Worth-It"}, {"id": 197, "wilayah": "Utara", "kecamatan": "Krembangan", "tanah": "250", "bangunan": "250", "kamar": "4", "harga": 4500, "worthIt": "Not Worth-It"}, {"id": 198, "wilayah": "Barat", "kecamatan": "Tandes", "tanah": "216", "bangunan": "247", "kamar": "5", "harga": 5700, "worthIt": "Not Worth-It"}, {"id": 199, "wilayah": "Timur", "kecamatan": "Rungkut", "tanah": "67", "bangunan": "33", "kamar": "2", "harga": 695000, "worthIt": "Not Worth-It"}, {"id": 200, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "75", "bangunan": "42", "kamar": "2", "harga": 1050, "worthIt": "Not Worth-It"}, {"id": 201, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "126", "bangunan": "210", "kamar": "4", "harga": 3100, "worthIt": "Not Worth-It"}, {"id": 202, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "125", "bangunan": "100", "kamar": "10", "harga": 3300, "worthIt": "Not Worth-It"}, {"id": 203, "wilayah": "Barat", "kecamatan": "Karang Pilang", "tanah": "160", "bangunan": "320", "kamar": "32", "harga": 2850, "worthIt": "Worth-It"}, {"id": 204, "wilayah": "Timur", "kecamatan": "Tenggilis Mejoyo", "tanah": "232", "bangunan": "250", "kamar": "4", "harga": 2680, "worthIt": "Worth-It"}, {"id": 205, "wilayah": "Barat", "kecamatan": "Lakarsantri", "tanah": "55", "bangunan": "80", "kamar": "3", "harga": 1600, "worthIt": "Not Worth-It"}, {"id": 206, "wilayah": "Timur", "kecamatan": "Rungkut", "tanah": "45", "bangunan": "60", "kamar": "3", "harga": 700000, "worthIt": "Not Worth-It"}, {"id": 207, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "128", "bangunan": "150", "kamar": "4", "harga": 4500, "worthIt": "Not Worth-It"}, {"id": 208, "wilayah": "Barat", "kecamatan": "Lakarsantri", "tanah": "200", "bangunan": "300", "kamar": "4", "harga": 2450, "worthIt": "Worth-It"}, {"id": 209, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "295", "bangunan": "450", "kamar": "4", "harga": 8000, "worthIt": "Not Worth-It"}, {"id": 210, "wilayah": "Selatan", "kecamatan": "Jambangan", "tanah": "344", "bangunan": "619", "kamar": "5", "harga": 5000, "worthIt": "Worth-It"}, {"id": 211, "wilayah": "Utara", "kecamatan": "Kenjeran", "tanah": "44", "bangunan": "35", "kamar": "2", "harga": 630000, "worthIt": "Not Worth-It"}, {"id": 212, "wilayah": "Pusat", "kecamatan": "Gubeng", "tanah": "300", "bangunan": "300", "kamar": "4", "harga": 5240, "worthIt": "Not Worth-It"}, {"id": 213, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "78", "bangunan": "118", "kamar": "3", "harga": 1850, "worthIt": "Not Worth-It"}, {"id": 214, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "1798", "bangunan": "935", "kamar": "10", "harga": 23000, "worthIt": "Worth-It"}, {"id": 215, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "200", "bangunan": "165", "kamar": "4", "harga": 2600, "worthIt": "Worth-It"}, {"id": 216, "wilayah": "Barat", "kecamatan": "Wiyung", "tanah": "670", "bangunan": "670", "kamar": "6", "harga": 6600, "worthIt": "Worth-It"}, {"id": 217, "wilayah": "Timur", "kecamatan": "Rungkut", "tanah": "120", "bangunan": "180", "kamar": "5", "harga": 2600, "worthIt": "Worth-It"}, {"id": 218, "wilayah": "Utara", "kecamatan": "Krembangan", "tanah": "250", "bangunan": "250", "kamar": "5", "harga": 5000, "worthIt": "Not Worth-It"}, {"id": 219, "wilayah": "Timur", "kecamatan": "Rungkut", "tanah": "200", "bangunan": "160", "kamar": "3", "harga": 1800, "worthIt": "Worth-It"}, {"id": 220, "wilayah": "Barat", "kecamatan": "Dukuh Pakis", "tanah": "135", "bangunan": "135", "kamar": "3", "harga": 2500, "worthIt": "Worth-It"}, {"id": 221, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "500", "bangunan": "400", "kamar": "5", "harga": 7500, "worthIt": "Worth-It"}, {"id": 222, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "75", "bangunan": "110", "kamar": "3", "harga": 1700, "worthIt": "Not Worth-It"}, {"id": 223, "wilayah": "Timur", "kecamatan": "Rungkut", "tanah": "45", "bangunan": "60", "kamar": "3", "harga": 700000, "worthIt": "Not Worth-It"}, {"id": 224, "wilayah": "Barat", "kecamatan": "Lakarsantri", "tanah": "150", "bangunan": "230", "kamar": "4", "harga": 4050, "worthIt": "Not Worth-It"}, {"id": 225, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "360", "bangunan": "380", "kamar": "4", "harga": 9500, "worthIt": "Not Worth-It"}, {"id": 226, "wilayah": "Barat", "kecamatan": "Karang Pilang", "tanah": "205", "bangunan": "180", "kamar": "3", "harga": 2500, "worthIt": "Worth-It"}, {"id": 227, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "72", "bangunan": "97", "kamar": "3", "harga": 2300, "worthIt": "Not Worth-It"}, {"id": 228, "wilayah": "Selatan", "kecamatan": "Jambangan", "tanah": "112", "bangunan": "300", "kamar": "19", "harga": 3400, "worthIt": "Not Worth-It"}, {"id": 229, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "125", "bangunan": "120", "kamar": "10", "harga": 3300, "worthIt": "Not Worth-It"}, {"id": 230, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "81", "bangunan": "114", "kamar": "3", "harga": 1650, "worthIt": "Worth-It"}, {"id": 231, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "162", "bangunan": "252", "kamar": "5", "harga": 3200, "worthIt": "Not Worth-It"}, {"id": 232, "wilayah": "Barat", "kecamatan": "Pakal", "tanah": "72", "bangunan": "70", "kamar": "2", "harga": 35000, "worthIt": "Not Worth-It"}, {"id": 233, "wilayah": "Timur", "kecamatan": "Rungkut", "tanah": "37", "bangunan": "37", "kamar": "2", "harga": 495000, "worthIt": "Not Worth-It"}, {"id": 234, "wilayah": "Barat", "kecamatan": "Sukomanunggal", "tanah": "306", "bangunan": "400", "kamar": "5", "harga": 5750, "worthIt": "Not Worth-It"}, {"id": 235, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "78", "bangunan": "118", "kamar": "3", "harga": 1850, "worthIt": "Worth-It"}, {"id": 236, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "165", "bangunan": "180", "kamar": "3", "harga": 1320, "worthIt": "Worth-It"}, {"id": 237, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "450", "bangunan": "675", "kamar": "9", "harga": 8500, "worthIt": "Worth-It"}, {"id": 238, "wilayah": "Timur", "kecamatan": "Tenggilis Mejoyo", "tanah": "1898", "bangunan": "400", "kamar": "4", "harga": 35000, "worthIt": "Not Worth-It"}, {"id": 239, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "135", "bangunan": "220", "kamar": "5", "harga": 3190, "worthIt": "Not Worth-It"}, {"id": 240, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "100", "bangunan": "80", "kamar": "10", "harga": 2550, "worthIt": "Not Worth-It"}, {"id": 241, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "1000", "bangunan": "1566", "kamar": "5", "harga": 32000, "worthIt": "Not Worth-It"}, {"id": 242, "wilayah": "Selatan", "kecamatan": "Gayungan", "tanah": "200", "bangunan": "120", "kamar": "3", "harga": 2800, "worthIt": "Worth-It"}, {"id": 243, "wilayah": "Pusat", "kecamatan": "Gubeng", "tanah": "600", "bangunan": "1000", "kamar": "4", "harga": 8900, "worthIt": "Worth-It"}, {"id": 244, "wilayah": "Timur", "kecamatan": "Sukolilo", "tanah": "107", "bangunan": "173", "kamar": "4", "harga": 2050, "worthIt": "Not Worth-It"}, {"id": 245, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "300", "bangunan": "200", "kamar": "4", "harga": 3350, "worthIt": "Worth-It"}, {"id": 246, "wilayah": "Timur", "kecamatan": "Tenggilis Mejoyo", "tanah": "347", "bangunan": "280", "kamar": "7", "harga": 2590, "worthIt": "Worth-It"}, {"id": 247, "wilayah": "Timur", "kecamatan": "Mulyorejo", "tanah": "60", "bangunan": "100", "kamar": "3", "harga": 1300, "worthIt": "Not Worth-It"}, {"id": 248, "wilayah": "Barat", "kecamatan": "Wiyung", "tanah": "108", "bangunan": "90", "kamar": "3", "harga": 770000, "worthIt": "Not Worth-It"}], worthFilter = '';
+
+function go(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('on'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('pg-' + id).classList.add('on');
+  document.querySelectorAll('.nav-btn')[['home','find','add','check'].indexOf(id)].classList.add('active');
+  window.scrollTo(0, 0);
+  if (id === 'home') renderStats();
+  if (id === 'find') filter();
+}
+
+function fillKec(targetId, srcId) {
+  const w = document.getElementById(srcId).value;
+  const s = document.getElementById(targetId);
+  s.innerHTML = '<option value="">Pilih Kecamatan</option>';
+  (KECAMATAN[w] || []).forEach(k => { const o = document.createElement('option'); o.textContent = k; s.appendChild(o); });
+}
+
+function renderStats() {
+  const w = allHouses.filter(h => h.worthIt === 'Worth-It').length;
+  document.getElementById('st-worth').textContent = w || '—';
+  document.getElementById('st-not').textContent = (allHouses.length - w) || '—';
+}
+
+function setWorth(val, el) {
+  worthFilter = val;
+  document.querySelectorAll('#worth-chips .chip').forEach(c => c.classList.remove('on'));
+  el.classList.add('on');
+  filter();
+}
+
+function filter() {
+  const budget = parseFloat(document.getElementById('f-budget').value) || Infinity;
+  const wil = document.getElementById('f-wil').value;
+  const kamarMin = parseInt(document.getElementById('f-kamar').value) || 0;
+  const res = allHouses.filter(h => {
+    if (h.harga > budget) return false;
+    if (wil && h.wilayah !== wil) return false;
+    if (kamarMin && h.kamar < kamarMin) return false;
+    if (worthFilter && h.worthIt !== worthFilter) return false;
+    return true;
+  });
+  document.getElementById('res-count').textContent = res.length;
+  const grid = document.getElementById('house-grid');
+  const empty = document.getElementById('empty');
+  if (!res.length) { grid.innerHTML = ''; empty.style.display = 'block'; return; }
+  empty.style.display = 'none';
+  grid.innerHTML = res.map(h => `
+    <div class="hcard">
+      <div class="hcard-top">
+        <div class="hcard-price"><small>Harga Jual</small>${h.harga ? 'Rp ' + h.harga + 'M' : '—'}</div>
+        <span class="badge ${h.worthIt==='Worth-It'?'w':'n'}">${h.worthIt==='Worth-It'?'✅ Worth It':'❌ Not Worth It'}</span>
+      </div>
+      <div class="hcard-loc"><strong>${h.kecamatan||'—'}</strong>, Surabaya ${h.wilayah||'—'}</div>
+      <div class="hcard-div"></div>
+      <div class="hcard-specs">
+        <div><div class="sv">${h.kamar||'—'}</div><div class="sk">Kamar</div></div>
+        <div><div class="sv">${h.tanah||'—'}</div><div class="sk">m² Tanah</div></div>
+        <div><div class="sv">${h.bangunan||'—'}</div><div class="sk">m² Bgn</div></div>
+      </div>
+    </div>`).join('');
+}
+
+function showPanel(id) {
+  ['res-idle','res-loading','res-verdict','res-error'].forEach(i => document.getElementById(i).style.display = 'none');
+  document.getElementById(id).style.display = 'block';
+}
+
+function toggleYN(grpId, val, btn) {
+  const grp = document.getElementById(grpId);
+  grp.querySelectorAll('.yn-btn').forEach(b => b.className = 'yn-btn');
+  btn.className = 'yn-btn ' + (val === 'Y' ? 'active-y' : 'active-n');
+  grp.dataset.val = val;
+}
+
+function getYN(grpId, def) {
+  const grp = document.getElementById(grpId);
+  if (!grp) return def;
+  const active = grp.querySelector('.yn-btn.active-y, .yn-btn.active-n');
+  if (!active) return def;
+  return active.classList.contains('active-y') ? 'Y' : 'N';
+}
+
+function getBit(grpId) {
+  return getYN(grpId, 'N') === 'Y' ? 1 : 0;
+}
+
+function buildPayload(p) {
+  return {
+    Wilayah:            document.getElementById(p+'-wil').value,
+    Kecamatan:          document.getElementById(p+'-kec').value,
+    Luas_Tanah:         parseFloat(document.getElementById(p+'-tanah').value) || 0,
+    Luas_Bangunan:      parseFloat(document.getElementById(p+'-ban').value) || 0,
+    Jumlah_Kamar:       parseInt(document.getElementById(p+'-kamar').value) || 0,
+    Jumlah_Kamar_Mandi: parseInt(document.getElementById(p+'-km').value) || 0,
+    Lantai:             parseFloat(document.getElementById(p+'-lantai').value) || 1,
+    Harga:              parseFloat(document.getElementById(p+'-harga').value.replace(/\./g, '')) || 0,
+    Arah_Hadap:         document.getElementById(p+'-arah').value,
+    Posisi:             document.getElementById(p+'-posisi').value,
+    ROW:                parseFloat(document.getElementById(p+'-row').value) || 0,
+    Carport:            parseInt(document.getElementById(p+'-carport').value) || 0,
+    Watt_Listrik:       parseInt(document.getElementById(p+'-watt').value) || 2200,
+    Siap_Huni:          getYN(p+'-huni-grp', 'Y'),
+    Furnish:            getYN(p+'-furnish-grp', 'N'),
+    Dekat_Pasar:        getBit(p+'-pasar-grp'),
+    Dekat_Sekolah:      getBit(p+'-skul-grp'),
+    Dekat_RS:           getBit(p+'-rs-grp'),
+    Dekat_Mall:         getBit(p+'-mall-grp'),
+    Dekat_Ibadah:       getBit(p+'-ibadah-grp'),
+    Dekat_Makam:        getBit(p+'-makam-grp'),
+    Dekat_ClubHouse:    getBit(p+'-club-grp'),
+  };
+}
+
+async function callFlask(payload) {
+  const r = await fetch(FLASK + '/predict', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  });
+  if (!r.ok) throw new Error('Server error ' + r.status);
+  return r.json();
+}
+
+async function doCheck() {
+  const payload = buildPayload('c');
+  if (!payload.Wilayah || !payload.Kecamatan || !payload.Harga) {
+    alert('Mohon isi semua field yang diperlukan.'); return;
+  }
+  showPanel('res-loading');
+  document.getElementById('chk-btn').disabled = true;
+
+  try {
+    const d = await callFlask(payload);
+    const isW = d.result === 1;
+    const label = d.label || (isW ? 'Worth-It' : 'Not Worth-It');
+
+    document.getElementById('v-icon').textContent = isW ? '✅' : '❌';
+    document.getElementById('v-label').textContent = label;
+    document.getElementById('v-label').className = 'verdict-label ' + (isW ? 'w' : 'n');
+    document.getElementById('v-badge').textContent = isW ? '🏆 Layak Dibeli' : '⚠️ Pertimbangkan Ulang';
+    document.getElementById('v-badge').className = 'verdict-badge ' + (isW ? 'w' : 'n');
+
+    const pctW = isW ? 100 : 0, pctN = isW ? 0 : 100;
+    setTimeout(() => { document.getElementById('pb-w').style.width = pctW+'%'; document.getElementById('pb-n').style.width = pctN+'%'; }, 80);
+    document.getElementById('pp-w').textContent = pctW + '%';
+    document.getElementById('pp-n').textContent = pctN + '%';
+
+    const hargaPerM2 = payload.Luas_Tanah > 0
+      ? Math.round(payload.Harga * 1_000_000 / payload.Luas_Tanah).toLocaleString('id-ID')
+      : '—';
+    document.getElementById('v-info').innerHTML =
+      `📍 <strong>${payload.Kecamatan}</strong>, Surabaya ${payload.Wilayah}<br/>
+       💰 Rp ${payload.Harga}M &nbsp;·&nbsp; 📐 ${payload.Luas_Tanah}m² / ${payload.Luas_Bangunan}m²<br/>
+       🛏 ${payload.Jumlah_Kamar} kamar &nbsp;·&nbsp; Harga/m²: Rp ${hargaPerM2}`;
+
+    showPanel('res-verdict');
+  } catch (e) {
+    document.getElementById('res-error').innerHTML = `
+      <div class="err-box">
+        ❌ <strong>Gagal terhubung ke server Flask</strong><br/><br/>
+        Pastikan server sudah berjalan di terminal:<br/>
+        <code>python app.py</code><br/><br/>
+        Lalu buka website melalui <code>http://127.0.0.1:5000</code><br/><br/>
+        <small>Error: ${e.message}</small>
+      </div>`;
+    showPanel('res-error');
+  }
+  document.getElementById('chk-btn').disabled = false;
+}
+
+async function addHouse() {
+  const payload = buildPayload('a');
+  const hargaBersih = document.getElementById('a-harga').value.replace(/\./g, '');
+  payload.Harga = (parseFloat(hargaBersih) || 0)/1000000;
+
+  if (!payload.Wilayah || !payload.Kecamatan || !payload.Harga) {
+    alert('Isi semua field yang diperlukan.'); return;
+  }
+  const btn = document.getElementById('add-btn');
+  btn.disabled = true; btn.textContent = '⏳ Mengklasifikasi...';
+
+  try {
+    const d = await callFlask(payload);
+    const worth = d.result === 1 ? 'Worth-It' : 'Not Worth-It';
+
+    const saveRes = await fetch(FLASK + '/houses', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        wilayah:   payload.Wilayah,
+        kecamatan: payload.Kecamatan,
+        tanah:     payload.Luas_Tanah,
+        bangunan:  payload.Luas_Bangunan,
+        kamar:     payload.Jumlah_Kamar,
+        harga:     payload.Harga,  
+        worthIt:   worth,
+      })
+    });
+    const saved = await saveRes.json();
+
+    allHouses.unshift({
+      id: saved.id, wilayah: payload.Wilayah, kecamatan: payload.Kecamatan,
+      tanah: payload.Luas_Tanah, bangunan: payload.Luas_Bangunan,
+      kamar: payload.Jumlah_Kamar, harga: payload.Harga, worthIt: worth
+    });
+
+    const toast = document.getElementById('add-toast');
+    toast.textContent = `🎉 Ditambahkan & disimpan ke database! Klasifikasi: ${worth}`;
+    toast.classList.add('on');
+    setTimeout(() => toast.classList.remove('on'), 4000);
+    renderStats();
+    filter();
+  } catch (e) {
+    alert('Gagal terhubung ke server Flask.\nPastikan app.py sudah berjalan.\n\nError: ' + e.message);
+  }
+  btn.disabled = false; btn.textContent = '🏠 Tambah & Klasifikasi dengan ML';
+}
+
+async function loadHouses() {
+  try {
+    const r = await fetch(FLASK + '/houses');
+    if (!r.ok) throw new Error('Gagal fetch /houses');
+    const data = await r.json();
+    allHouses = data.map(h => ({
+      id:        h.id,
+      wilayah:   h.wilayah,
+      kecamatan: h.kecamatan,
+      tanah:     h.tanah,
+      bangunan:  h.bangunan,
+      kamar:     h.kamar,
+      harga:     h.harga,
+      worthIt:   h.worth_it,
+    }));
+    renderStats();
+    filter();
+  } catch (e) {
+    console.error('Gagal load data rumah:', e);
+  }
+}
+
+loadHouses();
+
+const inputHarga = document.getElementById('a-harga');
+inputHarga.addEventListener('input', function(e) {
+  let angka = this.value.replace(/[^0-9]/g, '');
+  if (angka !== '') {
+    this.value = parseInt(angka, 10).toLocaleString('id-ID');
+  } else {
+    this.value = '';
+  }
+});
+
+const inputHargaC = document.getElementById('c-harga');
+if (inputHargaC) {
+  inputHargaC.addEventListener('input', function(e) {
+    let angka = this.value.replace(/[^0-9]/g, '');
+    if (angka !== '') {
+      this.value = parseInt(angka, 10).toLocaleString('id-ID');
+    } else {
+      this.value = '';
+    }
+  });
+}
+
+</script>
+</body>
+</html>
